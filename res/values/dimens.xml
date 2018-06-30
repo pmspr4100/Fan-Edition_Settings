@@ -39,5 +39,10 @@
 
     <!-- Where the category icon will start (from the left) -->
     <dimen name="custom_cat_icon_image_inset">6dp</dimen>
+    <dimen name="picker_circle_preview_size">26dp</dimen>
+    <dimen name="alert_dialog_padding_material">20dp</dimen>
+
+    <dimen name="floating_widget_view_padding">10dp</dimen>
+    <dimen name="floating_widget_window_padding">10dp</dimen>
 
 </resources>
