@@ -39,6 +39,19 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory 
+        android:key="game_mode_category"
+        android:title="@string/gaming_title">
+
+        <com.android.settings.widget.CardPreference
+            android:key="gaming_category"
+            android:title="@string/gaming_title"
+            android:fragment="com.raven.lair.fragments.system_misc.GamingModeSettings"
+            android:icon="@drawable/ic_gaming_background"
+            android:summary="@string/gaming_title_summary" />
+
+       </PreferenceCategory>
+
     <PreferenceCategory
         android:title="@string/misc" >
 
