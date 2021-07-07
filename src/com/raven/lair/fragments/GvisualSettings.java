@@ -43,7 +43,6 @@ import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
-import com.android.internal.util.custom.CustomUtils;
 import com.android.internal.util.custom.ThemesUtils;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -143,7 +142,7 @@ public class GvisualSettings extends SettingsPreferenceFragment implements
         int position = -1;
         for (int i = 0; i < overlays.length; i++) {
             String overlay = overlays[i];
-            if (CustomUtils.isThemeEnabled(overlay)) {
+            if (ThemesUtils.isThemeEnabled(overlay)) {
                 position = i;
             }
         }
@@ -154,7 +153,7 @@ public class GvisualSettings extends SettingsPreferenceFragment implements
         String overlayName = null;
         for (int i = 0; i < overlays.length; i++) {
             String overlay = overlays[i];
-            if (CustomUtils.isThemeEnabled(overlay)) {
+            if (ThemesUtils.isThemeEnabled(overlay)) {
                 overlayName = overlay;
             }
         }
