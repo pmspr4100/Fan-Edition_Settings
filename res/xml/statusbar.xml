@@ -108,6 +108,15 @@
             android:defaultValue="false" />
 
         <com.android.settings.custom.preference.SystemSettingListPreference
+		android:key="qs_panel_bg_use_new_tint"
+	        android:title="@string/qs_bg_use_new_tint"
+	        android:dialogTitle="@string/qs_bg_use_new_tint"
+	        android:entries="@array/qs_tint_entries"
+	        android:entryValues="@array/qs_tint_values"
+	        android:summary="@string/qs_bg_use_new_tint_summary"
+	        android:defaultValue="3" />
+
+        <com.android.settings.custom.preference.SystemSettingListPreference
             android:key="qs_quick_pulldown"
             android:title="@string/status_bar_quick_qs_pulldown_title"
             android:entries="@array/status_bar_quick_qs_pulldown_entries"
