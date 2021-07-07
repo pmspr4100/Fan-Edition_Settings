@@ -38,6 +38,11 @@
 
     <!-- Generic stuff used everywhere -->
     <string name="reset">Reset</string>
+    <string name="gestures">Gestures</string>
+    <string name="misc">Misc</string>
+    <string name="clock">Lockscreen Clocks</string>
+    <string name="lockscreen_security">Security</string>
+    <string name="incall_vibration_category">In Call Vibrations</string>
 
     <!-- Buttons -->
     <string name="button_pref_title">Buttons</string>
@@ -217,4 +222,37 @@
     <string name="qs_rows_landscape_title">Rows (landscape)</string>
     <string name="qs_columns_portrait_title">Columns (portrait)</string>
     <string name="qs_columns_landscape_title">Columns (landscape)</string>
+
+   <!-- Advanced restart options -->
+    <string name="advanced_reboot_title">Advanced restart</string>
+    <string name="advanced_reboot_summary">When unlocked, include options in the power menu for restarting into recovery or bootloader</string>
+
+   <!-- Lock screen cover art -->
+    <string name="lockscreen_media_art_title">Display media cover art</string>
+
+    <!-- Lock screen visualizer -->
+    <string name="lockscreen_visualizer_title">Display music visualizer</string>
+
+   <!-- Heads-up -->
+    <string name="heads_up_notifications_enabled_title">Heads-up</string>
+    <string name="heads_up_notifications_enabled_summary">Display priority notifications in a small floating window</string>
+
+     <!-- Wake on plug -->
+    <string name="wake_when_plugged_or_unplugged_title">Wake on plug</string>
+    <string name="wake_when_plugged_or_unplugged_summary">Turn the screen on when connecting or disconnecting a power source</string>
+    
+    <!-- Double tap to sleep on status bar or lockscreen -->
+    <string name="status_bar_double_tap_to_sleep_title">Tap to sleep</string>
+    <string name="status_bar_double_tap_to_sleep_summary">Double-tap on the status bar or lockscreen to turn off the display</string>
+
+    <!-- In-call feedback -->
+    <string name="incall_feeedback_vibrate_title">Vibrate to indicate call status</string>
+
+     <!-- Fingerprint unlock -->
+    <string name="fp_unlock_keystore_title">Force FP authentication</string>
+    <string name="fp_unlock_keystore_summary">Unlock device with fingerprint after reboot or lockdown</string>
+
+   <!-- Lockscreen battery info indicator  -->
+    <string name="lockscreen_battery_info_title">Lockscreen charging info</string>
+    <string name="lockscreen_battery_info_summary">Show charging current, voltage, wattage and battery temperature on lockscreen while charging</string>
 </resources>
