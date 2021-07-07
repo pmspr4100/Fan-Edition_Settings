@@ -16,19 +16,57 @@
 
 package com.raven.lair.tabs;
 
-import android.os.Bundle;
 import static android.os.UserHandle.USER_SYSTEM;
 import static android.os.UserHandle.USER_CURRENT;
 
-import android.preference.Preference.OnPreferenceChangeListener;
+import android.app.ActivityManagerNative;
+import android.app.UiModeManager;
+import android.content.Context;
+import android.content.ContentResolver;
+import android.content.om.IOverlayManager;
+import android.content.om.OverlayInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.res.Resources;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.os.UserHandle;
+import android.os.RemoteException;
+import android.os.ServiceManager;
+import androidx.annotation.VisibleForTesting;
 import androidx.preference.Preference;
+import androidx.preference.ListPreference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
-import androidx.preference.PreferenceFragment;
+import androidx.preference.Preference.OnPreferenceChangeListener;
+import android.provider.SearchIndexableResource;
+import android.provider.Settings;
+import android.text.TextUtils;
+import android.util.Log;
+import android.view.WindowManagerGlobal;
+import android.view.IWindowManager;
+import android.widget.Toast;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import java.util.Locale;
+import android.text.TextUtils;
+import android.view.View;
 
 import com.android.settings.R;
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settingslib.search.Indexable;
+import com.android.settingslib.search.SearchIndexable;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.settings.Utils;
+
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -41,18 +79,34 @@ public class Lockscreen extends SettingsPreferenceFragment
     private static final String CUSTOM_CLOCK_FACE = Settings.Secure.LOCK_SCREEN_CUSTOM_CLOCK_FACE;
     private static final String DEFAULT_CLOCK = "com.android.keyguard.clock.DefaultClockController";
 
+    private static final String FOD_DISABLED_BY_PROP ="ro.fingerprint.inscreen_disabled";
+    private static final String FOD_TWEAKS = "fod_tweaks";
+
+    private ContentResolver mResolver;
+    private Context mContext;
     private ListPreference mLockClockStyles;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.lockscreen);
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+        ContentResolver resolver = getActivity().getContentResolver();
+        mContext = getActivity();
         mLockClockStyles = (ListPreference) findPreference(CUSTOM_CLOCK_FACE);
         String mLockClockStylesValue = getLockScreenCustomClockFace();
         mLockClockStyles.setValue(mLockClockStylesValue);
         mLockClockStyles.setSummary(mLockClockStyles.getEntry());
         mLockClockStyles.setOnPreferenceChangeListener(this);
+        if (!isFODdevice()) {
+            prefScreen.removePreference(findPreference(FOD_TWEAKS));
+           }
         }
+
+	private boolean isFODdevice() {
+        return (getResources().getBoolean(
+                com.android.internal.R.bool.config_supportsInDisplayFingerprint));
+    }
 
     @Override
     public void onResume() {
@@ -68,8 +122,8 @@ public class Lockscreen extends SettingsPreferenceFragment
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         final String key = preference.getKey();
         if (preference == mLockClockStyles) {
-            setLockScreenCustomClockFace((String) newValue);
-            int index = mLockClockStyles.findIndexOfValue((String) newValue);
+            setLockScreenCustomClockFace((String) objValue);
+            int index = mLockClockStyles.findIndexOfValue((String) objValue);
             mLockClockStyles.setSummary(mLockClockStyles.getEntries()[index]);
             return true;
         }

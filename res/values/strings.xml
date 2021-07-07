@@ -356,4 +356,12 @@
     <string name="lock_screen_custom_clock_face_mnml">MNML</string>
     <string name="lock_screen_custom_clock_face_fluid">Fluid</string>
     <string name="lock_screen_custom_clock_face_shape">ShapeShift</string>
+
+     <!-- Screen off fod -->
+    <string name="fod_gesture_title">Unlock with fingerprint when the screen is off</string>
+    <string name="fod_gesture_summary">Allows unlocking the device without having to wake up the screen first</string>
+
+    <!-- FOD stuffs -->
+    <string name="fod_title">FOD Customisations</string>
+    <string name="fod_summary">Customize Your Fingerprint on Display</string>
 </resources>

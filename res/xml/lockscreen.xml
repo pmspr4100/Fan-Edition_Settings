@@ -1,4 +1,4 @@
-kk<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2017-2019 The Dirty Unicorns Project
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -67,11 +67,11 @@ kk<?xml version="1.0" encoding="utf-8"?>
 
         </PreferenceCategory>
 
-        <!-- FOD Customisations 
+        <!-- FOD Customisations -->
         <Preference
             android:key="fod_tweaks"
             android:title="@string/fod_title"
             android:summary="@string/fod_summary"
-            android:fragment="com.raven.lair.fragments.FodTweaks" />  -->
+            android:fragment="com.raven.lair.fragments.FodTweaks" />  
 
 </PreferenceScreen>
