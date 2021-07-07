@@ -4,6 +4,12 @@
         android:key="button_settings"
         android:title="@string/button_pref_title">
 
+    <PreferenceScreen
+            android:title="@string/gestures_title"
+            android:summary="@string/gestures_summary">
+            <intent android:action="com.android.settings.GESTURE_NAVIGATION_SETTINGS" />
+   </PreferenceScreen>
+
     <PreferenceCategory
         android:key="navbar_key"
         android:title="@string/navigation_bar_title">

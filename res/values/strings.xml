@@ -45,6 +45,9 @@
     <string name="incall_vibration_category">In Call Vibrations</string>
     <string name="statusbar_clock">Clocks</string>
     <string name="statusbar_battery">Battery</string>
+    <string name="gestures_title">Nav Bar Gesture Customisations</string>
+    <string name="gestures_summary">Take Your Pill</string>
+
 
     <!-- Buttons -->
     <string name="button_pref_title">Buttons</string>
