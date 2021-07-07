@@ -43,21 +43,13 @@ import java.util.Set;
 public class Statusbar extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
-    private static final String CATEGORY_BATTERY = "status_bar_battery_key";
-    private static final String CATEGORY_CLOCK = "status_bar_clock_key";
     private static final String CATEGORY_BRIGHTNESS = "status_bar_brightness_category";
 
     private static final String ICON_BLACKLIST = "icon_blacklist";
 
-    private static final String STATUS_BAR_CLOCK_STYLE = "status_bar_clock";
-    private static final String STATUS_BAR_AM_PM = "status_bar_am_pm";
-    private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
-    private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
     private static final String STATUS_BAR_QUICK_QS_PULLDOWN = "qs_quick_pulldown";
     private static final String STATUS_BAR_QUICK_QS_SHOW_BRIGHTNESS_SLIDER = "qs_show_brightness_slider";
     private static final String STATUS_BAR_QUICK_QS_SHOW_AUTO_BRIGHTNESS = "qs_show_auto_brightness";
-
-    private static final int STATUS_BAR_BATTERY_STYLE_TEXT = 2;
 
     private static final int STATUS_BAR_QS_BRIGHTNESS_NEVER_SHOW = 0;
 
@@ -66,16 +58,10 @@ public class Statusbar extends SettingsPreferenceFragment
     private static final int PULLDOWN_DIR_LEFT = 2;
 
     private SystemSettingListPreference mQuickPulldown;
-    private SystemSettingListPreference mStatusBarClock;
-    private SystemSettingListPreference mStatusBarAmPm;
-    private SystemSettingListPreference mStatusBarBattery;
-    private SystemSettingListPreference mStatusBarBatteryShowPercent;
 
     private SecureSettingListPreference mStatusBarQsShowBrightnessSlider;
     private SwitchPreference mStatusBarQsShowAutoBrightness;
 
-    private PreferenceCategory mStatusBarBatteryCategory;
-    private PreferenceCategory mStatusBarClockCategory;
     private PreferenceCategory mStatusBarBrightnessCategory;
 
     private static boolean sHasCenteredNotch;
@@ -86,19 +72,6 @@ public class Statusbar extends SettingsPreferenceFragment
         addPreferencesFromResource(R.xml.statusbar);
 
         sHasCenteredNotch = CutoutUtils.hasCenteredCutout(getActivity());
-
-        mStatusBarAmPm = findPreference(STATUS_BAR_AM_PM);
-        mStatusBarClock = findPreference(STATUS_BAR_CLOCK_STYLE);
-        mStatusBarClock.setOnPreferenceChangeListener(this);
-
-        mStatusBarClockCategory = getPreferenceScreen().findPreference(CATEGORY_CLOCK);
-
-        mStatusBarBatteryShowPercent = findPreference(STATUS_BAR_SHOW_BATTERY_PERCENT);
-        mStatusBarBattery = findPreference(STATUS_BAR_BATTERY_STYLE);
-        mStatusBarBattery.setOnPreferenceChangeListener(this);
-        enableStatusBarBatteryDependents(mStatusBarBattery.getIntValue(0));
-
-        mStatusBarBatteryCategory = getPreferenceScreen().findPreference(CATEGORY_BATTERY);
 
         mQuickPulldown = findPreference(STATUS_BAR_QUICK_QS_PULLDOWN);
         mQuickPulldown.setOnPreferenceChangeListener(this);
@@ -119,47 +92,8 @@ public class Statusbar extends SettingsPreferenceFragment
     @Override
     public void onResume() {
         super.onResume();
-
-        final String curIconBlacklist = Settings.Secure.getString(getContext().getContentResolver(),
-                ICON_BLACKLIST);
-
-        if (TextUtils.delimitedStringContains(curIconBlacklist, ',', "clock")) {
-            getPreferenceScreen().removePreference(mStatusBarClockCategory);
-        } else {
-            getPreferenceScreen().addPreference(mStatusBarClockCategory);
-        }
-
-        if (TextUtils.delimitedStringContains(curIconBlacklist, ',', "battery")) {
-            getPreferenceScreen().removePreference(mStatusBarBatteryCategory);
-        } else {
-            getPreferenceScreen().addPreference(mStatusBarBatteryCategory);
-        }
-
-        if (DateFormat.is24HourFormat(getActivity())) {
-            mStatusBarAmPm.setEnabled(false);
-            mStatusBarAmPm.setSummary(R.string.status_bar_am_pm_info);
-        }
-
-        final boolean disallowCenteredClock = sHasCenteredNotch;
-
-        // Adjust status bar preferences for RTL
-        if (getResources().getConfiguration().getLayoutDirection() == View.LAYOUT_DIRECTION_RTL) {
-            if (disallowCenteredClock) {
-                mStatusBarClock.setEntries(R.array.status_bar_clock_position_entries_notch_rtl);
-                mStatusBarClock.setEntryValues(R.array.status_bar_clock_position_values_notch);
-            } else {
-                mStatusBarClock.setEntries(R.array.status_bar_clock_position_entries_rtl);
-                mStatusBarClock.setEntryValues(R.array.status_bar_clock_position_values);
-            }
             mQuickPulldown.setEntries(R.array.status_bar_quick_qs_pulldown_entries_rtl);
             mQuickPulldown.setEntryValues(R.array.status_bar_quick_qs_pulldown_values);
-        } else if (disallowCenteredClock) {
-            mStatusBarClock.setEntries(R.array.status_bar_clock_position_entries_notch);
-            mStatusBarClock.setEntryValues(R.array.status_bar_clock_position_values_notch);
-        } else {
-            mStatusBarClock.setEntries(R.array.status_bar_clock_position_entries);
-            mStatusBarClock.setEntryValues(R.array.status_bar_clock_position_values);
-        }
     }
 
     @Override
@@ -170,18 +104,11 @@ public class Statusbar extends SettingsPreferenceFragment
             case STATUS_BAR_QUICK_QS_PULLDOWN:
                 updateQuickPulldownSummary(value);
                 break;
-            case STATUS_BAR_BATTERY_STYLE:
-                enableStatusBarBatteryDependents(value);
-                break;
             case STATUS_BAR_QUICK_QS_SHOW_BRIGHTNESS_SLIDER:
                 enableStatusBarQsBrightnessDependents(value);
                 break;
         }
         return true;
-    }
-
-    private void enableStatusBarBatteryDependents(int batteryIconStyle) {
-        mStatusBarBatteryShowPercent.setEnabled(batteryIconStyle != STATUS_BAR_BATTERY_STYLE_TEXT);
     }
 
     private void enableStatusBarQsBrightnessDependents(int qsBrightnessType) {
