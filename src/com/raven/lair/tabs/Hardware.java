@@ -45,8 +45,7 @@ import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-import com.android.settings.custom.buttons.preference.*;
-import com.android.settings.custom.buttons.ButtonSettingsUtils;
+import com.raven.lair.buttons.*;
 
 import com.android.internal.custom.hardware.LineageHardwareManager;
 import com.android.internal.util.custom.NavbarUtils;
@@ -55,16 +54,15 @@ import java.util.List;
 import java.util.UUID;
 
 import com.android.settings.Utils;
-import com.android.settings.custom.preference.CustomDialogPreference;
 import com.android.settings.gestures.PowerMenuPreferenceController;
 import com.android.settings.gestures.SystemNavigationPreferenceController;
 
 import static android.view.WindowManagerPolicyConstants.NAV_BAR_MODE_2BUTTON_OVERLAY;
 import static android.view.WindowManagerPolicyConstants.NAV_BAR_MODE_3BUTTON_OVERLAY;
 
-public class ButtonSettings extends SettingsPreferenceFragment implements
+public class Hardware extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
-    private static final String TAG = "ButtonSettings";
+    private static final String TAG = "Hardware";
 
     private static final String KEY_BUTTON_BACKLIGHT = "button_backlight";
     private static final String KEY_HOME_LONG_PRESS = "hardware_keys_home_long_press";

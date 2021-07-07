@@ -15,7 +15,7 @@
 */
 package com.raven.lair.buttons;
 
-kimport android.content.Context;
+import android.content.Context;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraCharacteristics;
 import android.hardware.camera2.CameraManager;

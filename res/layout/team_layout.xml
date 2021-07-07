@@ -83,7 +83,7 @@
 
         </RelativeLayout>
 
-	<com.corvus.support.helpers.CircularImageView
+	<com.android.settings.custom.helpers.CircularImageView
             android:id="@+id/devImage"
             android:layout_width="60dp"
             android:layout_height="60dp"

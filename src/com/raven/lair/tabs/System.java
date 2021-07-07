@@ -30,23 +30,11 @@ import com.android.settings.SettingsPreferenceFragment;
 public class System extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
-    private static final String NOTIFICATIONS_CATEGORY = "notifications_category";
-    private static final String MISC_CATEGORY = "miscellaneous_category";
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.system);
 
-        Preference Notifications = findPreference(NOTIFICATIONS_CATEGORY);
-        if (!getResources().getBoolean(R.bool.has_notifications)) {
-            getPreferenceScreen().removePreference(Notifications);
-        }
-
-        Preference MiscOptions = findPreference("miscellaneous_category");
-        if (!getResources().getBoolean(R.bool.has_misc_options)) {
-            getPreferenceScreen().removePreference(MiscOptions);
-        }
     }
 
     @Override

@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.android.settings.custom.statusbar;
+package com.raven.lair.tabs;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -40,7 +40,7 @@ import com.android.internal.util.custom.cutout.CutoutUtils;
 
 import java.util.Set;
 
-public class StatusBarSettings extends SettingsPreferenceFragment
+public class Statusbar extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
     private static final String CATEGORY_BATTERY = "status_bar_battery_key";
