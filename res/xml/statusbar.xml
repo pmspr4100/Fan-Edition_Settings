@@ -19,6 +19,13 @@
             android:summary="@string/status_bar_system_icons_summary">
             <intent android:action="com.android.settings.action.STATUS_BAR_TUNER" />
         </PreferenceScreen>
+         
+     <com.android.settings.custom.preference.SystemSettingSwitchPreference
+	        android:key="status_bar_notif_count"
+	        android:title="@string/status_bar_notif_count_title"
+	        android:summary="@string/status_bar_notif_count_summary"
+	        android:defaultValue="false" />
+
     </PreferenceCategory>
 
     <com.android.settings.custom.preference.SystemSettingSwitchPreference
