@@ -334,4 +334,26 @@
     <string name="sb_height_medium">Medium</string>
     <string name="sb_height_large">Large</string>
     <string name="sb_height_extralarge">Extra Large</string>
+
+    <!-- Lockscreen Clocks -->
+    <string name="lock_screen_custom_clock_face_category">Lockscreen Clock</string>
+    <string name="lock_screen_custom_clock_face_title">Lockscreen clock style</string>
+    <string name="lock_screen_custom_clock_face_default">Default</string>
+    <string name="lock_screen_custom_clock_face_default_bold">Default (bold)</string>
+    <string name="lock_screen_custom_clock_face_analog">Analog</string>
+    <string name="lock_screen_custom_clock_face_bubble">Bubble</string>
+    <string name="lock_screen_custom_clock_face_samsung">Samsung</string>
+    <string name="lock_screen_custom_clock_face_samsung_bold">Samsung (bold)</string>
+    <string name="lock_screen_custom_clock_face_typographic">Typographic</string>
+    <string name="lock_screen_custom_clock_face_404_ide">IDE</string>
+    <string name="lock_screen_custom_clock_face_divided_lines">Divided Lines</string>
+    <string name="lock_screen_custom_clock_face_binary">Binary</string>
+    <string name="lock_screen_custom_clock_face_type_alt">Typographic (bold)</string>
+    <string name="lock_screen_custom_clock_face_samsung_accent">Sammy</string>
+    <string name="lock_screen_custom_clock_face_spectrum">Spectrum</string>
+    <string name="lock_screen_custom_clock_face_sfuny">SFUNY</string>
+    <string name="lock_screen_custom_clock_face_mnml_box">MNML (box)</string>
+    <string name="lock_screen_custom_clock_face_mnml">MNML</string>
+    <string name="lock_screen_custom_clock_face_fluid">Fluid</string>
+    <string name="lock_screen_custom_clock_face_shape">ShapeShift</string>
 </resources>
