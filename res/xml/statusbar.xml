@@ -35,14 +35,19 @@
         android:defaultValue="false" />
 
     <PreferenceCategory
-        android:key="status_bar_clock_key"
-        android:title="@string/status_bar_clock_title">
+        android:title="@string/statusbar_clock">
+        
+              <Preference
+	        android:fragment="com.raven.lair.fragments.ClockOptions"
+	        android:key="clock_options_category"
+	        android:summary="@string/clock_options_summary"
+	        android:title="@string/clock_options_title" />
 
     </PreferenceCategory>
 
     <PreferenceCategory
         android:key="status_bar_battery_key"
-        android:title="@string/status_bar_battery_title">
+        android:title="@string/statusbar_battery">
        
         <ListPreference
 	        android:key="status_bar_battery_style"
