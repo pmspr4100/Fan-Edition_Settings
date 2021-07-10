@@ -378,6 +378,9 @@
 	<item>@string/lock_screen_custom_clock_face_mnml</item>
         <item>@string/lock_screen_custom_clock_face_fluid</item>
         <item>@string/lock_screen_custom_clock_face_shape</item>
+        <item>@string/lock_screen_custom_clock_face_android_s</item>
+        <item>@string/lock_screen_custom_clock_face_android_s_dp3</item>
+	<item>@string/lock_screen_custom_clock_face_fluid_v2</item>
     </string-array>
     <string-array name="lock_screen_custom_clock_face_values" translatable="false">
         <item>com.android.keyguard.clock.DefaultClockController</item>
@@ -398,5 +401,8 @@
         <item>com.android.keyguard.clock.MNMLMinimalClockController</item>
         <item>com.android.keyguard.clock.FluidClockController</item>
         <item>com.android.keyguard.clock.ShapeShiftClockController</item>
+	<item>com.android.keyguard.clock.AndroidSClockController</item>
+        <item>com.android.keyguard.clock.AndroidSDP3ClockController</item>
+	<item>com.android.keyguard.clock.Fluidv2ClockController</item>
     </string-array>
 </resources>

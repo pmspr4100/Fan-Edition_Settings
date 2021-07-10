@@ -356,6 +356,9 @@
     <string name="lock_screen_custom_clock_face_mnml">MNML</string>
     <string name="lock_screen_custom_clock_face_fluid">Fluid</string>
     <string name="lock_screen_custom_clock_face_shape">ShapeShift</string>
+    <string name="lock_screen_custom_clock_face_android_s">Android S</string>
+    <string name="lock_screen_custom_clock_face_android_s_dp3">Android S DP3</string>
+    <string name="lock_screen_custom_clock_face_fluid_v2">Fluid v2</string>
 
      <!-- Screen off fod -->
     <string name="fod_gesture_title">Unlock with fingerprint when the screen is off</string>
