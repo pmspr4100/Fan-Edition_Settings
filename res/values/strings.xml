@@ -373,4 +373,8 @@
    <!-- 4G icon -->
     <string name="show_fourg_icon_title">4G icon</string>
     <string name="show_fourg_icon_summary">Display 4G icon in signal icon instead LTE</string>
+
+    <!-- Show Statusbar on Lockscreen -->
+    <string name="lockscreen_status_bar_title">Status bar</string>
+    <string name="lockscreen_status_bar_summary">Display status bar on the lockscreen</string>
 </resources>
