@@ -65,13 +65,20 @@
 	        android:summary="@string/fp_unlock_keystore_summary"
 		android:defaultValue="false" />
 
+         <com.android.settings.custom.preference.SystemSettingSwitchPreference
+      	    android:key="fod_gesture"
+            android:title="@string/fod_gesture_title"
+            android:summary="@string/fod_gesture_summary"
+            settings:controller="com.raven.lair.preferences.FodGesturePreferenceController" 
+            android:defaultValue="false" />
+
         </PreferenceCategory>
 
-        <!-- FOD Customisations -->
+        <!-- FOD Customisations
         <Preference
             android:key="fod_tweaks"
             android:title="@string/fod_title"
             android:summary="@string/fod_summary"
-            android:fragment="com.raven.lair.fragments.FodTweaks" />  
+            android:fragment="com.raven.lair.fragments.FodTweaks" />   -->
 
 </PreferenceScreen>
