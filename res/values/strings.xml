@@ -226,10 +226,6 @@
     <!-- In-call feedback -->
     <string name="incall_feeedback_vibrate_title">Vibrate to indicate call status</string>
 
-     <!-- Fingerprint unlock -->
-    <string name="fp_unlock_keystore_title">Force FP authentication</string>
-    <string name="fp_unlock_keystore_summary">Unlock device with fingerprint after reboot or lockdown</string>
-
    <!-- Lockscreen battery info indicator  -->
     <string name="lockscreen_battery_info_title">Lockscreen charging info</string>
     <string name="lockscreen_battery_info_summary">Show charging current, voltage, wattage and battery temperature on lockscreen while charging</string>
