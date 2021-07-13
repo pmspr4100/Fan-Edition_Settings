@@ -4,12 +4,6 @@
         android:key="button_settings"
         android:title="@string/button_pref_title">
 
-    <PreferenceScreen
-            android:title="@string/gestures_title"
-            android:summary="@string/gestures_summary">
-            <intent android:action="com.android.settings.GESTURE_NAVIGATION_SETTINGS" />
-   </PreferenceScreen>
-
     <PreferenceCategory
         android:key="navbar_key"
         android:title="@string/navigation_bar_title">
@@ -20,10 +14,11 @@
             android:summary="@string/disable_navkeys_summary"
             android:defaultValue="false" />
 
-        <Preference
-            android:key="navbar_gestures"
-            android:title="@string/system_navigation_title"
-            android:fragment="com.android.settings.gestures.SystemNavigationGestureSettings" />
+        <PreferenceScreen
+            android:title="@string/gestures_title"
+            android:summary="@string/gestures_summary">
+            <intent android:action="com.android.settings.GESTURE_NAVIGATION_SETTINGS" />
+        </PreferenceScreen>
 
         <com.android.settings.custom.preference.SystemSettingSwitchPreference
             android:key="navigation_bar_compact_layout"
