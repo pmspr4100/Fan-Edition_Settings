@@ -22,7 +22,7 @@
         <com.android.settings.custom.preference.SystemSettingSwitchPreference
           android:key="incall_feeedback_vibrate"
           android:title="@string/incall_feeedback_vibrate_title"
-          android:defaultValue="false"
+          android:defaultValue="true"
           settings:controller="com.raven.lair.preferences.IncallFeedbackPreferenceController" />
     </PreferenceCategory>
 
