@@ -33,7 +33,7 @@
             android:summary="@string/lockscreen_battery_info_summary"
             android:defaultValue="true" />
 
-            <com.android.settings.custom.preference.SystemSettingSwitchPreference
+            <com.android.settings.custom.preference.SecureSettingSwitchPreference
             android:key="lockscreen_media_metadata"
             android:title="@string/lockscreen_media_art_title"
             android:defaultValue="true" />
@@ -43,7 +43,7 @@
             android:title="@string/lockscreen_visualizer_title"
             android:defaultValue="false" />
      
-            <com.android.settings.custom.preference.SecureSettingSwitchPreference
+            <com.android.settings.custom.preference.SystemSettingSwitchPreference
 	        android:key="lockscreen_status_bar"
 	        android:title="@string/lockscreen_status_bar_title"
 	        android:summary="@string/lockscreen_status_bar_summary"
