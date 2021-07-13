@@ -79,9 +79,6 @@ public class Lockscreen extends SettingsPreferenceFragment
     private static final String CUSTOM_CLOCK_FACE = Settings.Secure.LOCK_SCREEN_CUSTOM_CLOCK_FACE;
     private static final String DEFAULT_CLOCK = "com.android.keyguard.clock.DefaultClockController";
 
-    private static final String FOD_DISABLED_BY_PROP ="ro.fingerprint.inscreen_disabled";
-    private static final String FOD_TWEAKS = "fod_tweaks";
-
     private ContentResolver mResolver;
     private Context mContext;
     private ListPreference mLockClockStyles;
@@ -90,7 +87,6 @@ public class Lockscreen extends SettingsPreferenceFragment
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.lockscreen);
-        final PreferenceScreen prefScreen = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
         mContext = getActivity();
         mLockClockStyles = (ListPreference) findPreference(CUSTOM_CLOCK_FACE);
@@ -98,15 +94,7 @@ public class Lockscreen extends SettingsPreferenceFragment
         mLockClockStyles.setValue(mLockClockStylesValue);
         mLockClockStyles.setSummary(mLockClockStyles.getEntry());
         mLockClockStyles.setOnPreferenceChangeListener(this);
-        if (!isFODdevice()) {
-            prefScreen.removePreference(findPreference(FOD_TWEAKS));
-           }
         }
-
-	private boolean isFODdevice() {
-        return (getResources().getBoolean(
-                com.android.internal.R.bool.config_supportsInDisplayFingerprint));
-    }
 
     @Override
     public void onResume() {
