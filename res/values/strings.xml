@@ -26,6 +26,7 @@
     <string name="developer_title">Developer</string>
     <string name="maintainer_title">Maintainer</string>
     <string name="contributor_title">Contributor</string>
+    <string name="graphicsdesigner_title">Graphics Designer</string>
 
     <!-- Bottom navigation -->
     <string name="navigation_system_title">System</string>

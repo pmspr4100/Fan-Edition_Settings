@@ -51,15 +51,12 @@ public class TeamActivity extends Activity {
 
        setTeamMember("Aryan Gupta", getString(R.string.leaddeveloper_title), "darkbeast69", "heisinbug",
                 R.drawable.aryan);
-        setTeamMember("Nitesh Kumar", getString(R.string.developer_title)
-                + " / " + getString(R.string.contributor_title), "niteshkumar2000", "Niteshkumar15",
-                R.drawable.nitesh);
         setTeamMember("Ralf979", getString(R.string.developer_title), "ralf979", "Ralf979",
                 R.drawable.ralf);
        setTeamMember("Christian de la Cruz", getString(R.string.developer_title), "chdelacr", "chdelacr",
                 R.drawable.cruz);
-       setTeamMember("Jhonse02", getString(R.string.contributor_title), "Jhonse02", "Jhonse02",
-                R.drawable.Jhonse);
+       setTeamMember("Dinesh", getString(R.string.graphicsdesigner_title), "eldinesh", "eldinesh",
+                R.drawable.dinesh);
 
         ListAdapter mAdapter = new ListAdapter(mList);
         mRecycleview.setAdapter(mAdapter);
