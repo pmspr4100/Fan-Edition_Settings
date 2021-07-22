@@ -55,7 +55,6 @@ import java.util.UUID;
 
 import com.android.settings.Utils;
 import com.android.settings.gestures.PowerMenuPreferenceController;
-import com.android.settings.gestures.SystemNavigationPreferenceController;
 
 import static android.view.WindowManagerPolicyConstants.NAV_BAR_MODE_2BUTTON_OVERLAY;
 import static android.view.WindowManagerPolicyConstants.NAV_BAR_MODE_3BUTTON_OVERLAY;
@@ -104,7 +103,6 @@ public class Hardware extends SettingsPreferenceFragment implements
     // Plus
     private static final String KEY_NAV_MENU_ARROW_KEYS = "navigation_bar_menu_arrow_keys";
     private static final String KEY_NAV_INVERSE = "sysui_nav_bar_inverse";
-    private static final String KEY_NAV_GESTURES = "navbar_gestures";
     private static final String KEY_NAV_COMPACT_LAYOUT = "navigation_bar_compact_layout";
     private static final String KEY_TORCH_LONG_PRESS_POWER = "torch_long_press_power_gesture";
     private static final String KEY_TORCH_LONG_PRESS_POWER_TIMEOUT = "torch_long_press_power_timeout";
@@ -125,7 +123,6 @@ public class Hardware extends SettingsPreferenceFragment implements
 
     private SwitchPreference mNavigationMenuArrowKeys;
     private SwitchPreference mNavigationInverse;
-    private Preference mNavigationGestures;
     private SwitchPreference mNavigationCompactLayout;
     private SwitchPreference mTorchLongPressPower;
     private ListPreference mTorchLongPressPowerTimeout;
@@ -196,7 +193,6 @@ public class Hardware extends SettingsPreferenceFragment implements
         mNavbarCategory = prefScreen.findPreference(CATEGORY_NAVBAR);
         mNavigationMenuArrowKeys = findPreference(KEY_NAV_MENU_ARROW_KEYS);
         mNavigationInverse = findPreference(KEY_NAV_INVERSE);
-        mNavigationGestures = findPreference(KEY_NAV_GESTURES);
         mNavigationCompactLayout = findPreference(KEY_NAV_COMPACT_LAYOUT);
 
         mSwapCapacitiveKeys = findPreference(KEY_SWAP_CAPACITIVE_KEYS);
@@ -242,7 +238,6 @@ public class Hardware extends SettingsPreferenceFragment implements
             updateDisableNavkeysCategories(mDisableNavigationKeys.isChecked());
             mNavigationMenuArrowKeys.setDependency(DISABLE_NAV_KEYS);
             mNavigationInverse.setDependency(DISABLE_NAV_KEYS);
-            mNavigationGestures.setDependency(DISABLE_NAV_KEYS);
             mNavigationCompactLayout.setDependency(DISABLE_NAV_KEYS);
         } else {
             mNavbarCategory.removePreference(mDisableNavigationKeys);
@@ -497,16 +492,6 @@ public class Hardware extends SettingsPreferenceFragment implements
             if (mNavigationCompactLayout != null){
                 mNavbarCategory.removePreference(mNavigationCompactLayout);
                 mNavigationCompactLayout = null;
-            }
-        }
-        if (!SystemNavigationPreferenceController.isGestureAvailable(getActivity())){
-            if (mNavigationGestures != null){
-                mNavbarCategory.removePreference(mNavigationGestures);
-                mNavigationGestures = null;
-            }
-        }else{
-            if (mNavigationGestures != null){
-                mNavigationGestures.setSummary(SystemNavigationPreferenceController.getPrefSummary(getActivity()));
             }
         }
         if (mNavbarCategory != null && mNavbarCategory.getPreferenceCount() == 0){
