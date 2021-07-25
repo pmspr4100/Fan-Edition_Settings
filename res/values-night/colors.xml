@@ -11,7 +11,6 @@
      limitations under the License.
 -->
 <resources>
-
-    <color name="fod_item_background_stroke_color">#555555</color>
+    <color name="custom_pulse_background">@*android:color/accent_device_default_dark</color>
 
 </resources>

@@ -36,10 +36,8 @@
 	
     <!-- The Team -->
     <dimen name="team_recycler_height">500dp</dimen>
-    
-    <!--FOD -->
-    <dimen name="fod_picker_item_margin">10dp</dimen>
-    <dimen name="fod_picker_item_size">100dp</dimen>
-    <dimen name="fod_picker_item_padding">20dp</dimen>
+
+    <!-- Where the category icon will start (from the left) -->
+    <dimen name="custom_cat_icon_image_inset">6dp</dimen>
 
 </resources>

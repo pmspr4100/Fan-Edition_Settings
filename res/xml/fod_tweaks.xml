@@ -16,38 +16,32 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/fod_title">
 
-       <com.android.settings.custom.preference.SystemSettingSwitchPreference
+        <com.android.settings.custom.preference.SystemSettingSwitchPreference
       	    android:key="fod_gesture"
             android:title="@string/fod_gesture_title"
             android:summary="@string/fod_gesture_summary"
             android:defaultValue="true" />
 
-       <!-- FOD recognizing animation -->
-    <com.android.settings.custom.preference.SystemSettingSwitchPreference
-        android:key="fod_recognizing_animation"
-        android:title="@string/fod_recog_animation"
-        android:summary="@string/fod_recog_animation_summary"
-        android:defaultValue="false" />
+        <com.android.settings.custom.preference.SystemSettingSwitchPreference
+            android:key="fod_recognizing_animation"
+            android:title="@string/fod_recog_animation"
+            android:summary="@string/fod_recog_animation_summary"
+            android:defaultValue="false" />
 
-    <com.android.settings.custom.preference.SystemSettingListPreference
-        android:key="fod_anim"
-        android:title="@string/fod_recog_animation_effect_title"
-        android:summary="%s"
-        android:entries="@array/fod_recog_animation_entries"
-        android:entryValues="@array/fod_recog_animation_values"
-        android:defaultValue="0"
-        android:dependency="fod_recognizing_animation" />
+        <com.android.settings.custom.preference.SystemSettingListPreference
+            android:key="fod_anim"
+            android:title="@string/fod_recog_animation_effect_title"
+            android:summary="%s"
+            android:entries="@array/fod_recog_animation_entries"
+            android:entryValues="@array/fod_recog_animation_values"
+            android:defaultValue="0"
+            android:dependency="fod_recognizing_animation" />
 
-      <!-- FOD icon picker -->
-    <Preference
-        android:key="fod_icon_picker_category"
-        android:title="@string/fod_icon_picker_title"
-        android:summary="@string/fod_icon_picker_summary"
-        android:fragment="com.raven.lair.fragments.FODIconPickerFragment" />
-
-    <com.android.settings.custom.preference.SystemSettingSwitchPreference
-        android:key="fod_icon_wallpaper_color"
-        android:title="@string/fod_wallpaper_color"
-        android:summary="@string/fod_wallpaper_color_summary"
-        android:defaultValue="false" />
+        <com.android.settings.custom.preference.SystemSettingListPreference
+            android:key="fod_color"
+            android:title="@string/fod_pressed_color_title"
+            android:summary="%s"
+            android:entries="@array/fod_pressed_color_entries"
+            android:entryValues="@array/fod_pressed_color_values"
+            android:defaultValue="@*android:integer/config_fod_pressed_color" />
 </PreferenceScreen>
