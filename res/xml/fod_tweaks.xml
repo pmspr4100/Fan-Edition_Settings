@@ -22,6 +22,10 @@
             android:summary="@string/fod_gesture_summary"
             android:defaultValue="true" />
 
+        <Preference
+            android:title="@string/fod_icon_picker_title"
+            android:key="custom_fingerprint_icon" />
+
         <com.android.settings.custom.preference.SystemSettingSwitchPreference
             android:key="fod_icon_animation"
             android:title="@string/fod_icon_animation"
