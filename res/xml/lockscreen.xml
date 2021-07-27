@@ -49,12 +49,6 @@
 	    android:summary="@string/lockscreen_status_bar_summary"
 	    android:defaultValue="true" />
 
-	   <com.android.settings.custom.preference.SystemSettingSwitchPreference
-      	    android:key="fod_gesture"
-            android:title="@string/fod_gesture_title"
-            android:summary="@string/fod_gesture_summary"
-            settings:controller="com.raven.lair.preferences.FodGesturePreferenceController" 
-            android:defaultValue="false" />
 	    </PreferenceCategory>
 
     <PreferenceCategory
@@ -68,11 +62,11 @@
             android:entryValues="@array/lock_screen_custom_clock_face_values" />
     </PreferenceCategory>
 
-        <!-- FOD Customisations
+        <!-- FOD Customisations -->
         <Preference
             android:key="fod_tweaks"
             android:title="@string/fod_title"
             android:summary="@string/fod_summary"
-            android:fragment="com.raven.lair.fragments.FodTweaks" />   -->
+            android:fragment="com.raven.lair.fragments.FodTweaks" />  
 
 </PreferenceScreen>
