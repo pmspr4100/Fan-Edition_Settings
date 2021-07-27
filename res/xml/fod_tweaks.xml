@@ -69,4 +69,9 @@
             android:dependency="fod_recognizing_animation" />
 </PreferenceCategory>
 
+        <com.android.settingslib.widget.FooterPreference
+            android:key="custom_fod_icon_footer"
+            android:selectable="false"
+            settings:searchable="false" />
+
 </PreferenceScreen>
