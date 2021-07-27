@@ -57,6 +57,7 @@ import com.android.settings.custom.preference.SystemSettingSwitchPreference;
 import com.android.settings.custom.preference.SystemSettingListPreference;
 
 import com.android.internal.util.custom.fod.FodUtils;
+import com.android.internal.util.custom.CustomUtils;
 
 import java.io.FileDescriptor;
 import java.util.Arrays;
@@ -65,7 +66,7 @@ import java.util.Collection;
 import java.util.List;
 
 @SearchIndexable
-public class FodGeneral extends SettingsPreferenceFragment implements
+public class FodTweaks extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
     private ContentResolver mResolver;
@@ -80,12 +81,20 @@ public class FodGeneral extends SettingsPreferenceFragment implements
     private Handler mHandler;
 
     private static final String FOOTER = "custom_fod_icon_footer";
+    private static final String FOD_ANIMATION_CATEGORY = "fod_animations";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.fod_tweaks);
-        PreferenceScreen prefScreen = getPreferenceScreen();
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+        final PreferenceCategory fodCat = (PreferenceCategory) prefScreen
+                .findPreference(FOD_ANIMATION_CATEGORY);
+        final boolean isFodAnimationResources = CustomUtils.isPackageInstalled(getContext(),
+                      getResources().getString(com.android.internal.R.string.config_fodAnimationPackage));
+        if (!isFodAnimationResources) {
+            prefScreen.removePreference(fodCat);
+        }
         mResolver = getActivity().getContentResolver();
         Context mContext = getContext();
         final PackageManager mPm = getActivity().getPackageManager();
@@ -122,12 +131,6 @@ public class FodGeneral extends SettingsPreferenceFragment implements
 
         SystemSettingSwitchPreference AnimaTogglePref = (SystemSettingSwitchPreference) findPreference("fod_recognizing_animation");
         SystemSettingListPreference AnimaListPref = (SystemSettingListPreference) findPreference("fod_recognizing_animation_list");
-
-        if (AnimaTogglePref != null && AnimaListPref != null
-                && !com.android.internal.util.custom.CustomUtils.isPackageInstalled(mContext,"com.custom.fod.animations")) {
-            prefScreen.removePreference(AnimaTogglePref);
-            prefScreen.removePreference(AnimaListPref);
-        }
 
         mCustomSettingsObserver.observe();
         mCustomSettingsObserver.update();
@@ -228,7 +231,7 @@ public class FodGeneral extends SettingsPreferenceFragment implements
                     boolean enabled) {
                 final ArrayList<SearchIndexableResource> result = new ArrayList<>();
                 final SearchIndexableResource sir = new SearchIndexableResource(context);
-                sir.xmlResId = R.xml.fod_general;
+                sir.xmlResId = R.xml.fod_tweaks;
                 result.add(sir);
                 return result;
             }
