@@ -16,6 +16,8 @@
  */
 package com.raven.lair.tabs;
 
+import static android.os.UserHandle.USER_SYSTEM;
+
 import android.content.Context;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -41,6 +43,7 @@ import com.android.settings.custom.preference.SystemSettingListPreference;
 import com.android.settings.SettingsPreferenceFragment;
 
 import com.android.internal.util.custom.cutout.CutoutUtils;
+import com.android.internal.util.custom.ThemesUtils;
 
 import java.util.Set;
 
@@ -48,6 +51,7 @@ public class Statusbar extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
     private static final String CATEGORY_BRIGHTNESS = "status_bar_brightness_category";
+    private static final String BRIGHTNESS_SLIDER_STYLE = "brightness_slider_style";
 
     private static final String ICON_BLACKLIST = "icon_blacklist";
 
@@ -76,6 +80,7 @@ public class Statusbar extends SettingsPreferenceFragment
 
     private ListPreference mBatteryPercent;
     private ListPreference mBatteryStyle;
+    private ListPreference mBrightnessSliderStyle;
     private SwitchPreference mQsBatteryPercent;
 
     private int mBatteryPercentValue;
@@ -125,6 +130,7 @@ public class Statusbar extends SettingsPreferenceFragment
         mStatusBarQsShowBrightnessSlider = mStatusBarBrightnessCategory.findPreference(STATUS_BAR_QUICK_QS_SHOW_BRIGHTNESS_SLIDER);
         mStatusBarQsShowBrightnessSlider.setOnPreferenceChangeListener(this);
         mStatusBarQsShowAutoBrightness = mStatusBarBrightnessCategory.findPreference(STATUS_BAR_QUICK_QS_SHOW_AUTO_BRIGHTNESS);
+        getBrightnessSliderPref();
         if (!getResources().getBoolean(
                 com.android.internal.R.bool.config_automatic_brightness_available)){
             mStatusBarBrightnessCategory.removePreference(mStatusBarQsShowAutoBrightness);
@@ -180,11 +186,92 @@ public class Statusbar extends SettingsPreferenceFragment
                 break;
         }
         return true;
+
+	} else if (preference == mBrightnessSliderStyle) {
+            String brightness_style = (String) newValue;
+            final Context context = getContext();
+            switch (brightness_style) {
+                case "1":
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_DANIEL);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMEMINII);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMEROUND);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMEROUNDSTROKE);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMESTROKE);
+                   break;
+                case "2":
+                    handleOverlays(true, context, ThemesUtils.BRIGHTNESS_SLIDER_DANIEL);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMEMINII);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMEROUND);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMEROUNDSTROKE);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMESTROKE);
+                   break;
+                case "3":
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_DANIEL);
+                    handleOverlays(true, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMEMINII);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMEROUND);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMEROUNDSTROKE);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMESTROKE);
+                   break;
+                case "4":
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_DANIEL);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMEMINII);
+                    handleOverlays(true, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMEROUND);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMEROUNDSTROKE);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMESTROKE);
+                   break;
+                case "5":
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_DANIEL);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMEMINII);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMEROUND);
+                    handleOverlays(true, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMEROUNDSTROKE);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMESTROKE);
+                   break;
+                case "6":
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_DANIEL);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMEMINII);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMEROUND);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMEROUNDSTROKE);
+                    handleOverlays(true, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMESTROKE);
+                   break;
+            }
+            return true;
     }
 
     private void enableStatusBarQsBrightnessDependents(int qsBrightnessType) {
         if (mStatusBarQsShowAutoBrightness != null){
             mStatusBarQsShowAutoBrightness.setEnabled(qsBrightnessType != STATUS_BAR_QS_BRIGHTNESS_NEVER_SHOW);
+        }
+    }
+
+   private void getBrightnessSliderPref() {
+        mBrightnessSliderStyle = (ListPreference) findPreference(BRIGHTNESS_SLIDER_STYLE);
+        mBrightnessSliderStyle.setOnPreferenceChangeListener(this);
+        if (ThemeUtils.isThemeEnabled("com.android.systemui.brightness.slider.memestroke")) {
+            mBrightnessSliderStyle.setValue("6");
+        } else if (ThemeUtils.isThemeEnabled("com.android.systemui.brightness.slider.memeroundstroke")) {
+            mBrightnessSliderStyle.setValue("5");
+        } else if (ThemeUtils.isThemeEnabled("com.android.systemui.brightness.slider.memeround")) {
+            mBrightnessSliderStyle.setValue("4");
+        } else if (ThemeUtils.isThemeEnabled("com.android.systemui.brightness.slider.mememini")) {
+            mBrightnessSliderStyle.setValue("3");
+        } else if (ThemeUtils.isThemeEnabled("com.android.systemui.brightness.slider.daniel")) {
+            mBrightnessSliderStyle.setValue("2");
+        } else {
+            mBrightnessSliderStyle.setValue("1");
+        }
+    }
+
+    private void handleOverlays(Boolean state, Context context, String[] overlays) {
+        if (context == null) {
+            return;
+        }
+        for (int i = 0; i < overlays.length; i++) {
+            String xui = overlays[i];
+            try {
+                mOverlayService.setEnabled(xui, state, USER_SYSTEM);
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
         }
     }
 
