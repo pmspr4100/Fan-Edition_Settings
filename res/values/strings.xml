@@ -170,17 +170,22 @@
     <!-- Status bar - Clock -->
     <string name="status_bar_clock_title">Clock</string>
 
-    <!-- Status bar - Brightness -->
+    <!-- Quick Settings brightness slider -->
     <string name="status_bar_brightness_category">Brightness</string>
-    <string name="status_bar_brightness_slider_title">Brightness slider</string>
-    <string name="status_bar_brightness_slider_summary">Adjust brightness from the Quick Settings</string>
-    <string name="status_bar_brightness_slider_auto_title">Auto brightness</string>
-    <string name="status_bar_brightness_slider_auto_summary">Show toggle for adaptive brightness near the slider</string>
-    <string name="status_bar_brightness_slider_show_never">Never show</string>
-    <string name="status_bar_brightness_slider_show_expanded">Show when expanded</string>
-    <string name="status_bar_brightness_slider_show_always">Show always</string>
+    <string name="qs_show_brightness_slider_expanded_title">Expanded QS brightness slider</string>
+    <string name="qs_show_brightness_slider_expanded_summary">Show brightness slider when expanded</string>
+    <string name="qs_show_auto_brightness_title">Auto brightness icon</string>
+    <string name="qs_show_auto_brightness_summary">Show toggle for adaptive brightness near the slider</string>
+    <string name="qs_brightness_position_bottom_title">Brightness slider at bottom (Expanded QS)</string>
+    <string name="qs_brightness_position_bottom_summary">Show the brightness slider on bottom of expanded quick settings</string>
     <string name="status_bar_toggle_brightness">Brightness control</string>
     <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding across the status bar</string>
+
+    <!-- QQS brightness slider -->
+    <string name="qqs_brightness_slider_title">QQS brightness slider</string>
+    <string name="qs_brightness_slider_hide">Hide</string>
+    <string name="qs_brightness_slider_bottom">Bottom</string>
+    <string name="qs_brightness_slider_top">Top</string>
 
     <!-- Status bar - Network Traffic -->
     <string name="network_traffic_settings_title">Network traffic monitor</string>
