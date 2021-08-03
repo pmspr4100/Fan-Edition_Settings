@@ -42,6 +42,10 @@ import com.android.settings.custom.preference.SecureSettingListPreference;
 import com.android.settings.custom.preference.SystemSettingListPreference;
 import com.android.settings.SettingsPreferenceFragment;
 
+import android.content.om.IOverlayManager;
+import android.content.om.OverlayInfo;
+import android.os.RemoteException;
+
 import com.android.internal.util.custom.cutout.CutoutUtils;
 import com.android.internal.util.custom.ThemesUtils;
 
@@ -51,12 +55,13 @@ public class Statusbar extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
     private static final String CATEGORY_BRIGHTNESS = "status_bar_brightness_category";
+
     private static final String BRIGHTNESS_SLIDER_STYLE = "brightness_slider_style";
 
     private static final String ICON_BLACKLIST = "icon_blacklist";
 
     private static final String STATUS_BAR_QUICK_QS_PULLDOWN = "qs_quick_pulldown";
-    private static final String STATUS_BAR_QUICK_QS_SHOW_BRIGHTNESS_SLIDER = "qs_show_brightness_slider";
+    private static final String STATUS_BAR_QUICK_QS_SHOW_BRIGHTNESS_SLIDER = "qqs_show_brightness_slider";
     private static final String STATUS_BAR_QUICK_QS_SHOW_AUTO_BRIGHTNESS = "qs_show_auto_brightness";
 
     private static final int STATUS_BAR_QS_BRIGHTNESS_NEVER_SHOW = 0;
@@ -70,6 +75,9 @@ public class Statusbar extends SettingsPreferenceFragment
     private SecureSettingListPreference mStatusBarQsShowBrightnessSlider;
     private SwitchPreference mStatusBarQsShowAutoBrightness;
 
+    private IOverlayManager mOverlayManager;
+    private IOverlayManager mOverlayService;
+    
     private PreferenceCategory mStatusBarBrightnessCategory;
 
     private static boolean sHasCenteredNotch;
@@ -96,7 +104,10 @@ public class Statusbar extends SettingsPreferenceFragment
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.statusbar);
-
+        
+	mOverlayService = IOverlayManager.Stub
+                .asInterface(ServiceManager.getService(Context.OVERLAY_SERVICE));
+		
         int batterystyle = Settings.System.getIntForUser(getContentResolver(),
                 Settings.System.STATUS_BAR_BATTERY_STYLE, BATTERY_STYLE_PORTRAIT, UserHandle.USER_CURRENT);
         mBatteryStyle = (ListPreference) findPreference("status_bar_battery_style");
@@ -139,6 +150,14 @@ public class Statusbar extends SettingsPreferenceFragment
         enableStatusBarQsBrightnessDependents(mStatusBarQsShowBrightnessSlider.getIntValue(1));
     }
 
+   public void handleOverlays(String packagename, Boolean state, IOverlayManager mOverlayManager) {
+        try {
+            mOverlayService.setEnabled(packagename, state, USER_SYSTEM);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+    
     @Override
     public void onResume() {
         super.onResume();
@@ -174,20 +193,7 @@ public class Statusbar extends SettingsPreferenceFragment
                     (Boolean) newValue ? 1 : 0);
             return true;
         }
-
-       int value = Integer.parseInt((String) newValue);
-        String key = preference.getKey();
-        switch (key) {
-            case STATUS_BAR_QUICK_QS_PULLDOWN:
-                updateQuickPulldownSummary(value);
-                break;
-            case STATUS_BAR_QUICK_QS_SHOW_BRIGHTNESS_SLIDER:
-                enableStatusBarQsBrightnessDependents(value);
-                break;
-        }
-        return true;
-
-	} else if (preference == mBrightnessSliderStyle) {
+      else if (preference == mBrightnessSliderStyle) {
             String brightness_style = (String) newValue;
             final Context context = getContext();
             switch (brightness_style) {
@@ -235,6 +241,19 @@ public class Statusbar extends SettingsPreferenceFragment
                    break;
             }
             return true;
+        }
+
+       int value = Integer.parseInt((String) newValue);
+        String key = preference.getKey();
+        switch (key) {
+            case STATUS_BAR_QUICK_QS_PULLDOWN:
+                updateQuickPulldownSummary(value);
+                break;
+            case STATUS_BAR_QUICK_QS_SHOW_BRIGHTNESS_SLIDER:
+                enableStatusBarQsBrightnessDependents(value);
+                break;
+        }
+        return true;
     }
 
     private void enableStatusBarQsBrightnessDependents(int qsBrightnessType) {
@@ -246,22 +265,22 @@ public class Statusbar extends SettingsPreferenceFragment
    private void getBrightnessSliderPref() {
         mBrightnessSliderStyle = (ListPreference) findPreference(BRIGHTNESS_SLIDER_STYLE);
         mBrightnessSliderStyle.setOnPreferenceChangeListener(this);
-        if (ThemeUtils.isThemeEnabled("com.android.systemui.brightness.slider.memestroke")) {
+        if (ThemesUtils.isThemeEnabled("com.android.systemui.brightness.slider.memestroke")) {
             mBrightnessSliderStyle.setValue("6");
-        } else if (ThemeUtils.isThemeEnabled("com.android.systemui.brightness.slider.memeroundstroke")) {
+        } else if (ThemesUtils.isThemeEnabled("com.android.systemui.brightness.slider.memeroundstroke")) {
             mBrightnessSliderStyle.setValue("5");
-        } else if (ThemeUtils.isThemeEnabled("com.android.systemui.brightness.slider.memeround")) {
+        } else if (ThemesUtils.isThemeEnabled("com.android.systemui.brightness.slider.memeround")) {
             mBrightnessSliderStyle.setValue("4");
-        } else if (ThemeUtils.isThemeEnabled("com.android.systemui.brightness.slider.mememini")) {
+        } else if (ThemesUtils.isThemeEnabled("com.android.systemui.brightness.slider.mememini")) {
             mBrightnessSliderStyle.setValue("3");
-        } else if (ThemeUtils.isThemeEnabled("com.android.systemui.brightness.slider.daniel")) {
+        } else if (ThemesUtils.isThemeEnabled("com.android.systemui.brightness.slider.daniel")) {
             mBrightnessSliderStyle.setValue("2");
         } else {
             mBrightnessSliderStyle.setValue("1");
         }
     }
 
-    private void handleOverlays(Boolean state, Context context, String[] overlays) {
+   private void handleOverlays(Boolean state, Context context, String[] overlays) {
         if (context == null) {
             return;
         }
