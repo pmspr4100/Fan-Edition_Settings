@@ -62,7 +62,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.Utils;
-import com.android.settings.widget.CardPreference;
+
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -78,17 +78,19 @@ public class Lockscreen extends SettingsPreferenceFragment
 
     private static final String CUSTOM_CLOCK_FACE = Settings.Secure.LOCK_SCREEN_CUSTOM_CLOCK_FACE;
     private static final String DEFAULT_CLOCK = "com.android.keyguard.clock.DefaultClockController";
-    private static final String LOCKSCREEN_FOD_CATEGORY = "lockscreen_fod_category";
+
+    private static final String FOD_DISABLED_BY_PROP ="ro.fingerprint.inscreen_disabled";
+    private static final String FOD_TWEAKS = "fod_tweaks";
 
     private ContentResolver mResolver;
     private Context mContext;
     private ListPreference mLockClockStyles;
-    private CardPreference mLockscreenFod;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.lockscreen);
+        final PreferenceScreen prefScreen = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
         mContext = getActivity();
         mLockClockStyles = (ListPreference) findPreference(CUSTOM_CLOCK_FACE);
@@ -96,13 +98,14 @@ public class Lockscreen extends SettingsPreferenceFragment
         mLockClockStyles.setValue(mLockClockStylesValue);
         mLockClockStyles.setSummary(mLockClockStyles.getEntry());
         mLockClockStyles.setOnPreferenceChangeListener(this);
+        if (!isFODdevice()) {
+            prefScreen.removePreference(findPreference(FOD_TWEAKS));
+           }
+        }
 
-        CardPreference mLockscreenFod = findPreference("lockscreen_fod_category");
-        if (!getResources().getBoolean(com.android.internal.R.bool.config_supportsInDisplayFingerprint)) {
-                    getPreferenceScreen().removePreference(mLockscreenFod);
-        } else {
-            mLockscreenFod = (CardPreference) findPreference(LOCKSCREEN_FOD_CATEGORY);
-        } 
+	private boolean isFODdevice() {
+        return (getResources().getBoolean(
+                com.android.internal.R.bool.config_supportsInDisplayFingerprint));
     }
 
     @Override
