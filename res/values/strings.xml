@@ -454,5 +454,9 @@
     <string name="brightness_slider_style_memeround">Meme round</string>
     <string name="brightness_slider_style_memeroundstroke">Meme round stroke</string>
     <string name="brightness_slider_style_memestroke">Meme stroke</string>
+    <string name="brightness_slider_style_oos">OOS</string>
+    <string name="brightness_slider_style_rui">RUI</string>
+    <string name="brightness_slider_style_a12">A12</string>
+    <string name="brightness_slider_style_spark">Spark</string>
 
 </resources>

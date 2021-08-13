@@ -29,6 +29,7 @@ import android.view.View;
 import android.content.ContentResolver;
 import android.os.Bundle;
 import android.os.UserHandle;
+import android.os.ServiceManager;
 
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
@@ -203,6 +204,10 @@ public class Statusbar extends SettingsPreferenceFragment
                     handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMEROUND);
                     handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMEROUNDSTROKE);
                     handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMESTROKE);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_OOS);
+		    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_RUI);
+		    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_A12);
+  		    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_SPARK);
                    break;
                 case "2":
                     handleOverlays(true, context, ThemesUtils.BRIGHTNESS_SLIDER_DANIEL);
@@ -210,6 +215,10 @@ public class Statusbar extends SettingsPreferenceFragment
                     handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMEROUND);
                     handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMEROUNDSTROKE);
                     handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMESTROKE);
+		    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_OOS);
+	 	    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_RUI);
+	            handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_A12);
+		    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_SPARK);
                    break;
                 case "3":
                     handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_DANIEL);
@@ -217,13 +226,21 @@ public class Statusbar extends SettingsPreferenceFragment
                     handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMEROUND);
                     handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMEROUNDSTROKE);
                     handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMESTROKE);
+     		    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_OOS);
+	     	    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_RUI);
+		    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_A12);
+	            handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_SPARK);
                    break;
                 case "4":
-                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_DANIEL);
+    		    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_DANIEL);
                     handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMEMINII);
                     handleOverlays(true, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMEROUND);
                     handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMEROUNDSTROKE);
                     handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMESTROKE);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_OOS);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_RUI);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_A12);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_SPARK);
                    break;
                 case "5":
                     handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_DANIEL);
@@ -231,13 +248,65 @@ public class Statusbar extends SettingsPreferenceFragment
                     handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMEROUND);
                     handleOverlays(true, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMEROUNDSTROKE);
                     handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMESTROKE);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_OOS);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_RUI);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_A12);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_SPARK);
                    break;
                 case "6":
-                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_DANIEL);
+		    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_DANIEL);
                     handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMEMINII);
                     handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMEROUND);
                     handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMEROUNDSTROKE);
                     handleOverlays(true, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMESTROKE);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_OOS);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_RUI);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_A12);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_SPARK);
+                   break;
+                case "7":
+		    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_DANIEL);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMEMINII);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMEROUND);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMEROUNDSTROKE);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMESTROKE);
+                    handleOverlays(true, context, ThemesUtils.BRIGHTNESS_SLIDER_OOS);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_RUI);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_A12);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_SPARK);
+                   break;
+		case "8":
+		    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_DANIEL);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMEMINII);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMEROUND);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMEROUNDSTROKE);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMESTROKE);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_OOS);
+                    handleOverlays(true, context, ThemesUtils.BRIGHTNESS_SLIDER_RUI);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_A12);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_SPARK);
+                   break;
+		case "9":
+		    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_DANIEL);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMEMINII);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMEROUND);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMEROUNDSTROKE);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMESTROKE);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_OOS);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_RUI);
+                    handleOverlays(true, context, ThemesUtils.BRIGHTNESS_SLIDER_A12);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_SPARK);
+                   break;
+		case "10":
+		    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_DANIEL);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMEMINII);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMEROUND);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMEROUNDSTROKE);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_MEMESTROKE);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_OOS);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_RUI);
+                    handleOverlays(false, context, ThemesUtils.BRIGHTNESS_SLIDER_A12);
+                    handleOverlays(true, context, ThemesUtils.BRIGHTNESS_SLIDER_SPARK);
                    break;
             }
             return true;
