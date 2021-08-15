@@ -197,8 +197,8 @@
     <string name="network_traffic_autohide">Auto hide</string>
     <string name="network_traffic_autohide_summary">Hide the traffic monitor when there is no activity</string>
     <string name="network_traffic_units_title">Traffic measurement units</string>
-    <string name="network_traffic_units_bits" translatable="false">kbps, Mbps, Gbps</string>
-    <string name="network_traffic_units_bytes" translatable="false">kB/s, MB/s, GB/s</string>
+    <string name="network_traffic_units_bits" translatable="false">Bits</string>
+    <string name="network_traffic_units_bytes" translatable="false">Bytes</string>
 
     <!-- QS settings -->
     <string name="qs_title">Quick settings</string>
