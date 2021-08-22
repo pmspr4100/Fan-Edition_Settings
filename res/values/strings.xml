@@ -505,4 +505,9 @@
     <string name="gaming_mode_danmaku_speed_horizontal_title">Danmaku speed (horizontal)</string>
     <string name="gaming_mode_danmaku_speed_vertical_title">Danmaku speed (vertical)</string>
     <string name="gaming_mode_danmaku_blacklist">Blacklist</string>
+
+    <!-- Heads up -->
+    <string name="profile_choose_app">Choose app</string>
+    <string name="dialog_delete_title">Delete</string>
+    <string name="dialog_delete_message">Remove selected item?</string>
 </resources>
