@@ -43,7 +43,7 @@
         android:key="game_mode_category"
         android:title="@string/gaming_title">
 
-        <com.android.settings.widget.CardPreference
+         <PreferenceScreen
             android:key="gaming_category"
             android:title="@string/gaming_title"
             android:fragment="com.raven.lair.fragments.system_misc.GamingModeSettings"
