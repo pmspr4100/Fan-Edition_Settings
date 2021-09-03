@@ -16,11 +16,15 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/fod_title">
 
+    <PreferenceCategory
+        android:key="off_fod">
+
         <com.android.settings.custom.preference.SystemSettingSwitchPreference
       	    android:key="fod_gesture"
             android:title="@string/fod_gesture_title"
             android:summary="@string/fod_gesture_summary"
             android:defaultValue="true" />
+ </PreferenceCategory>
 
         <Preference
             android:title="@string/fod_icon_picker_title"

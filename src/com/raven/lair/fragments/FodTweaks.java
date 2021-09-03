@@ -83,6 +83,8 @@ public class FodTweaks extends SettingsPreferenceFragment implements
     private static final String FOOTER = "custom_fod_icon_footer";
     private static final String FOD_ANIMATION_CATEGORY = "fod_animations";
 
+    private static final String OFF_FOD = "off_fod";
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,6 +97,9 @@ public class FodTweaks extends SettingsPreferenceFragment implements
         if (!isFodAnimationResources) {
             prefScreen.removePreference(fodCat);
         }
+        if (!isScreenOffFOD()) {
+            prefScreen.removePreference(findPreference(OFF_FOD));
+           }
         mResolver = getActivity().getContentResolver();
         Context mContext = getContext();
         final PackageManager mPm = getActivity().getPackageManager();
@@ -204,6 +209,11 @@ public class FodTweaks extends SettingsPreferenceFragment implements
             return true;
         }
         return false;
+    }
+
+   private boolean isScreenOffFOD() {
+        return (getResources().getBoolean(
+                com.android.internal.R.bool.config_supportsScreenOffInDisplayFingerprint));
     }
 
     private void updatePrebuiltIcons() {
