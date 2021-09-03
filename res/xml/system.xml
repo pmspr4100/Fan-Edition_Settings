@@ -47,7 +47,6 @@
             android:key="gaming_category"
             android:title="@string/gaming_title"
             android:fragment="com.raven.lair.fragments.system_misc.GamingModeSettings"
-            android:icon="@drawable/ic_gaming_background"
             android:summary="@string/gaming_title_summary" />
 
        </PreferenceCategory>
