@@ -367,9 +367,9 @@ public class Statusbar extends SettingsPreferenceFragment
         String summary="";
         if (getResources().getConfiguration().getLayoutDirection() == View.LAYOUT_DIRECTION_RTL){
             if (value == PULLDOWN_DIR_LEFT) {
-                value = PULLDOWN_DIR_RIGHT;
-            }else if (value == PULLDOWN_DIR_RIGHT) {
                 value = PULLDOWN_DIR_LEFT;
+            }else if (value == PULLDOWN_DIR_RIGHT) {
+                value = PULLDOWN_DIR_RIGHT;
             }
         }
         switch (value) {
