@@ -72,12 +72,6 @@
         android:summary="@string/wake_when_plugged_or_unplugged_summary"
         android:defaultValue="@*android:bool/config_unplugTurnsOnScreen" />
 
-</PreferenceCategory>
-
-      <PreferenceCategory
-        android:key="aspect_ratio_category"
-        android:title="@string/aspect_ratio_category_title">
-
         <com.android.settings.custom.preference.SystemSettingSwitchPreference
             android:key="aspect_ratio_apps_enabled"
             android:title="@string/aspect_ratio_apps_enabled_title"
