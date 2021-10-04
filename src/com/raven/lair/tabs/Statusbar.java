@@ -334,7 +334,15 @@ public class Statusbar extends SettingsPreferenceFragment
    private void getBrightnessSliderPref() {
         mBrightnessSliderStyle = (ListPreference) findPreference(BRIGHTNESS_SLIDER_STYLE);
         mBrightnessSliderStyle.setOnPreferenceChangeListener(this);
-        if (ThemesUtils.isThemeEnabled("com.android.systemui.brightness.slider.memestroke")) {
+        if (ThemesUtils.isThemeEnabled("com.android.theme.systemui_slider_spark")) {
+            mBrightnessSliderStyle.setValue("10");
+        } else if(ThemesUtils.isThemeEnabled("com.android.theme.systemui_slider_a12")) {
+            mBrightnessSliderStyle.setValue("9");
+        } else if(ThemesUtils.isThemeEnabled("com.android.theme.systemui_slider_rui")) {
+            mBrightnessSliderStyle.setValue("8");
+        } else if(ThemesUtils.isThemeEnabled("com.android.theme.systemui_slider_oos")) {
+            mBrightnessSliderStyle.setValue("7");
+        } else if (ThemesUtils.isThemeEnabled("com.android.systemui.brightness.slider.memestroke")) {
             mBrightnessSliderStyle.setValue("6");
         } else if (ThemesUtils.isThemeEnabled("com.android.systemui.brightness.slider.memeroundstroke")) {
             mBrightnessSliderStyle.setValue("5");
