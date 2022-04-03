@@ -55,12 +55,6 @@
         android:title="@string/misc_category">
 
     <com.android.settings.custom.preference.SystemSettingSwitchPreference
-        android:key="lockscreen_small_clock"
-        android:title="@string/lockscreen_small_clock_title"
-        android:summary="@string/lockscreen_small_clock_summary"
-        android:defaultValue="false" />
-
-    <com.android.settings.custom.preference.SystemSettingSwitchPreference
         android:key="lockscreen_battery_info"
         android:title="@string/lockscreen_battery_info_title"
         android:summary="@string/lockscreen_battery_info_summary"
@@ -71,12 +65,6 @@
     <PreferenceCategory
         android:key="udfps_category"
         android:title="@string/udfps_category">
-
-        <Preference
-            android:key="udfps_settings"
-            android:title="@string/udfps_settings_title"
-            android:summary="@string/udfps_settings_summary"
-            android:fragment="org.pixelextended.snowhouse.fragments.UdfpsSettings" />
 
         <com.android.settings.custom.preference.SystemSettingSwitchPreference
             android:key="enable_ripple_effect"

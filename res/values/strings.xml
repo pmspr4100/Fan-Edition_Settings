@@ -45,7 +45,6 @@
 
     <string name="misc_category">Misc Settings</string>
     <string name="fingerprint_category">FP Sensor</string>
-    <string name="statusbar_clock">Clocks</string>
     <string name="qs_category">Quick Settings</string>
     <string name="power_key">Power Button</string>
     <string name="volume_keys">Volume Buttons</string>
@@ -143,67 +142,6 @@
     <string name="fprint_error_vib_title">Fingerprint error vibration</string>
     <string name="fprint_error_vib_summary">Vibrate on failed fingerprint authentication</string>
 
-     <!-- Status bar clock and date options -->
-    <string name="clock_options_title">Clock options</string>
-    <string name="clock_options_summary">Customize your statusbar clock</string>
-    <string name="status_bar_clock_title">Clock &amp; Date Settings</string>
-    <string name="status_bar_clock">Clock &amp; Date</string>
-    <string name="clock_enabled">Enabled</string>
-    <string name="clock_disabled">Disabled</string>
-    <string name="statusbar_clock_style_title">Clock &amp; date position</string>
-    <string name="statusbar_clock_style_right">Right</string>
-    <string name="statusbar_clock_style_centre">Centre</string>
-    <string name="statusbar_clock_style_left">Left</string>
-    <string name="status_bar_clock_style_reset">Reset color</string>
-    <string name="status_bar_show_clock_title">Show clock &amp; date</string>
-    <string name="status_bar_am_pm_title">AM/PM</string>
-    <string name="status_bar_am_pm_info">24-hour clock is enabled</string>
-    <string name="clock_seconds_display">Show seconds</string>
-    <string name="enable_clock_weekday">Day of the week</string>
-    <string name="enable_clock_weekday_summary">Abbreviated day of the week before the time</string>
-    <string name="dont_show">Don\'t show</string>
-    <string name="clock_date_display">Date</string>
-    <string name="clock_date_display_summary">Display custom date before the clock</string>
-    <string name="clock_date_style">Date style</string>
-    <string name="clock_date_format">Date format</string>
-    <string name="clock_date_string_edittext_title">Must be in DateFormat eg. MM/dd/yy</string>
-    <string name="clock_date_string_edittext_summary">Enter string</string>
-    <string name="am_pm_clock_normal">Normal font size</string>
-    <string name="am_pm_clock_small">Small font size</string>
-    <string name="am_pm_clock_none">Don\'t show</string>
-    <string name="clock_date_display_none">Don\'t show</string>
-    <string name="clock_date_display_small">Small font size</string>
-    <string name="clock_date_display_normal">Normal font size</string>
-    <string name="clock_date_style_normal">Normal</string>
-    <string name="clock_date_style_lowercase">Lowercase</string>
-    <string name="clock_date_style_uppercase">Uppercase</string>
-    <string name="clock_date_right">Right of time</string>
-    <string name="clock_date_left">Left of time</string>
-    <string name="clock_date_position">Date position</string>
-
-    <!-- Battery Styles -->
-    <string name="battery_style_category_title">Battery styles</string>
-    <string name="battery_percent_title">Battery percent</string>
-
-    <!-- Status bar - Battery -->
-    <string name="status_bar_battery_style_title">Battery style</string>
-    <string name="status_bar_battery_style_icon_portrait">Icon portrait (default)</string>
-    <string name="status_bar_battery_style_circle">Circle</string>
-    <string name="status_bar_battery_style_dotted_circle">Circle (Dotted)</string>
-    <string name="status_bar_battery_style_filled_circle">Circle (Filled)</string>
-    <string name="status_bar_battery_style_text">Text</string>
-    <string name="status_bar_battery_style_hidden">Hidden</string>
-
-    <!-- Status bar - Battery percentage -->
-    <string name="status_bar_battery_percentage_title">Battery percentage</string>
-    <string name="status_bar_battery_percentage_default">Hidden (default)</string>
-    <string name="status_bar_battery_percentage_text_inside">Inside the icon</string>
-    <string name="status_bar_battery_percentage_text_next">Next to the icon</string>  
-
-    <!-- QS battery estimates -->
-    <string name="qs_show_battery_estimate_title">Battery estimates</string>
-    <string name="qs_show_battery_estimate_summary">Show estimated remaining battery life next to the icon</string>
-
     <!-- Wake on plug -->
     <string name="wake_when_plugged_or_unplugged_title">Wake on plug</string>
     <string name="wake_when_plugged_or_unplugged_summary">Turn the screen on when connecting or disconnecting a power source</string>
@@ -239,10 +177,6 @@
     <string name="status_bar_toggle_brightness">Brightness control</string>
     <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding across the status bar</string>
 
-    <!-- Combined signal icons -->
-    <string name="combined_status_bar_signal_icons">Combined signal icons</string>
-    <string name="combined_status_bar_signal_icons_summary">Enable combined signal icons in statusbar</string>
-
     <string name="gestures_title">Nav Bar Gesture Customisations</string>
     <string name="gestures_summary">Take Your Pill</string>
 
@@ -251,50 +185,8 @@
     <string name="show_lockscreen_media_art_title">Show media art</string>
     <string name="lockscreen_media_art_options_title">Lockscreen media art</string>
 
-   <!-- Keyguard force small clock -->
-    <string name="lockscreen_small_clock_title">Force small clock</string>
-    <string name="lockscreen_small_clock_summary">Don\'t switch to the big clock when there are no notifications</string>
-
-    <!-- Statusbar net monitor -->
-    <string name="traffic_title">Traffic Indicators</string>
-    <string name="network_traffic">Network traffic</string>
-    <string name="network_traffic_state_title">Network traffic display</string>
-    <string name="network_traffic_location">Traffic indicator placement</string>
-    <string name="traffic_disabled">Disabled</string>
-    <string name="traffic_statusbar">Statusbar</string>
-    <string name="traffic_expanded_statusbar">Expanded header</string>
-    <string name="network_traffic_autohide_threshold_title">Net activity autohide threshold (KB/s)</string>
-
-    <string name="network_traffic_arrow">Show arrows</string>
-    <string name="network_traffic_arrow_summary">Show the network traffic indicator arrows</string>
-    <string name="network_traffic_type">Select net activity type</string>
-    <string name="show_network_traffic_combined">Combined (Upload + Download)</string>
-    <string name="show_network_traffic_dynamic">Dynamic</string>
-    <string name="show_network_traffic_up">Upload</string>
-    <string name="show_network_traffic_down">Download</string>
-    <string name="show_network_traffic_all">Both</string>
-    <string name="nettraf_font_size">Single net font size</string>
-
     <!-- Udfps animations -->
     <string name="udfps_category">Udfps</string>
-    <string name="udfps_recog_animation">Udfps animation</string>
-    <string name="udfps_recog_animation_summary">Shows an animation while reading your finger</string>
-    <string name="udfps_recog_animation_effect_title">Udfps animation effect</string>
-    <string name="udfps_recog_animation_effect_summary">Choose animation effect</string>
-
-    <!-- Udfps icon picker -->
-    <string name="udfps_icon_picker_title">Udfps icon picker</string>
-    <string name="udfps_icon_picker_summary">Choose your favorite fingerprint icon</string>
-
-    <!-- Udfps Custom Options -->
-    <string name="udfps_settings_title">Udfps Options</string>
-    <string name="udfps_settings_summary">Configure Your Udfps</string>
-
-    <!-- Custom FOD Icon -->
-    <string name="custom_fp_icon_title">Custom UDFPS Icon</string>
-    <string name="custom_fp_icon_summary">Enable custom UDFPS Icon from files</string>
-    <string name="custom_fp_select_title">Select Custom UDFPS Icon</string>
-    <string name="custom_fp_select_summary">Select custom image from your saved files or gallery</string>
 
     <string name="search">Search</string>
     <string name="search_apps">Search apps</string>
