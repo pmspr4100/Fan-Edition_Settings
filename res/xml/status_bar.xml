@@ -46,6 +46,12 @@
         android:summary="@string/status_bar_clock_summary"
         android:fragment="org.pixelextended.snowhouse.fragments.Clock" />
 
+    <!-- Battery settings -->
+    <Preference
+        android:key="battery_settings"
+        android:title="@string/battery_style_category_title"
+        android:fragment="org.pixelextended.snowhouse.fragments.StatusBarBattery" />
+
     <Preference
             android:key="traffic"
             android:fragment="org.pixelextended.snowhouse.fragments.Traffic"
