@@ -137,7 +137,7 @@
     <string name="qs_show_brightness_slider_never">Ne pas afficher</string>
     <string name="qs_show_brightness_slider_expanded">Afficher une fois développé</string>
     <string name="qs_show_brightness_slider_always">Toujours afficher</string>
-    <string name="qs_show_brightness_slider_not_expanded">Afficher lorsqu\'il n'est pas développé</string>
+    <string name="qs_show_brightness_slider_not_expanded">Afficher lorsqu\'il n\'est pas développé</string>
     <string name="qs_brightness_slider_position_title">Position</string>
     <string name="qs_brightness_slider_position_top">Haut</string>
     <string name="qs_brightness_slider_position_bottom">Bas</string>
