@@ -29,25 +29,10 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory
-        android:key="lockscreen_media_art_options"
-        android:title="@string/lockscreen_media_art_options_title" >
-
-       <com.android.settings.custom.preference.SystemSettingSwitchPreference
-            android:key="show_lockscreen_media_art"
-            android:title="@string/show_lockscreen_media_art_title"
-            android:defaultValue="true" />
-
-       <com.android.settings.custom.preference.SystemSettingSeekBarPreference
-            android:key="lockscreen_media_blur"
-            android:title="@string/lockscreen_media_blur_title"
-            android:dependency="show_lockscreen_media_art"
-            android:max="25"
-            android:min="0"
-            android:defaultValue="25"
-            settings:units="dp"/>
-
-    </PreferenceCategory>
+        <com.android.settings.custom.preference.SecureSettingSwitchPreference
+            android:key="lockscreen_media_metadata"
+            android:title="@string/lockscreen_media_art_title"
+            android:defaultValue="false" />
 
     <PreferenceCategory
         android:key="lockscreen_ui_general_category"
