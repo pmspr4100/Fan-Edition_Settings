@@ -34,6 +34,7 @@
     <string name="icon_title">Icon</string>
     <string name="color_title">Color</string>
     <string name="colors_title">Colors</string>
+    <string name="misc_title">Miscellaneous</string>
 
     <!-- Extensions categories -->
     <string name="status_bar_category">Statusbar</string>
@@ -302,4 +303,8 @@
     <!-- Lockscreen Clock -->
     <string name="lockscreen_small_clock_title">Small clock</string>
     <string name="lockscreen_small_clock_summary">Force small clock on lockscreen even if notifications are absent</string>
+
+    <!-- Power menu on secure lockscreen -->
+    <string name="lockscreen_enable_power_menu_title">Power menu</string>
+    <string name="lockscreen_enable_power_menu_summary">Allow accessing power menu on secure lockscreen</string>
 </resources>
