@@ -45,6 +45,12 @@
             android:summary="@string/udfps_recog_animation_effect_summary"
             android:fragment="org.pixelextended.snowhouse.fragments.UdfpsAnimation"/>
 
+	<com.android.settings.custom.preference.SystemSettingSwitchPreference
+            android:key="screen_off_fod"
+            android:title="@string/screen_off_fod_title"
+            android:summary="@string/screen_off_fod_summary"
+            android:defaultValue="false" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>
