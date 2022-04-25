@@ -35,14 +35,20 @@
             android:defaultValue="false" />
 
     <PreferenceCategory
-        android:key="lockscreen_ui_general_category"
-        android:title="@string/misc_category">
+            android:key="lockscreen_ui_general_category"
+            android:title="@string/misc_category">
 
-    <com.android.settings.custom.preference.SystemSettingSwitchPreference
-        android:key="lockscreen_battery_info"
-        android:title="@string/lockscreen_battery_info_title"
-        android:summary="@string/lockscreen_battery_info_summary"
-        android:defaultValue="true" />
+        <com.android.settings.custom.preference.SystemSettingSwitchPreference
+            android:key="lockscreen_battery_info"
+            android:title="@string/lockscreen_battery_info_title"
+            android:summary="@string/lockscreen_battery_info_summary"
+            android:defaultValue="true" />
+
+        <com.android.settings.custom.preference.SystemSettingSwitchPreference
+            android:key="lockscreen_small_clock"
+            android:title="@string/lockscreen_small_clock_title"
+            android:summary="@string/lockscreen_small_clock_summary"
+            android:defaultValue="false" />
 
     </PreferenceCategory>
 

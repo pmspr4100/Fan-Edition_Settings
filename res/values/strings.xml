@@ -298,4 +298,8 @@
     <string name="monet_engine_accurate_shades_title">Use accurate shades</string>
     <string name="monet_engine_chroma_factor_title">Chroma factor</string>
     <string name="monet_engine_linear_lightness_title">Use linear lightness</string>
+
+    <!-- Lockscreen Clock -->
+    <string name="lockscreen_small_clock_title">Small clock</string>
+    <string name="lockscreen_small_clock_summary">Force small clock on lockscreen even if notifications are absent</string>
 </resources>
