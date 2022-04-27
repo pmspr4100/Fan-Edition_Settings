@@ -29,11 +29,6 @@
 
     </PreferenceCategory>
 
-        <com.android.settings.custom.preference.SecureSettingSwitchPreference
-            android:key="lockscreen_media_metadata"
-            android:title="@string/lockscreen_media_art_title"
-            android:defaultValue="false" />
-
     <PreferenceCategory
             android:key="lockscreen_ui_general_category"
             android:title="@string/misc_category">
