@@ -330,4 +330,8 @@
     <!-- Volume keys customization -->
     <string name="volume_answer_call_title">Answer call</string>
     <string name="volume_answer_call_summary">Answer incoming calls by pressing the volume buttons</string>
+
+    <!-- Pocket judge -->
+    <string name="pocket_judge_title">Pocket detection</string>
+    <string name="pocket_judge_summary">Block screen and button inputs when device is in pocket</string>
 </resources>
