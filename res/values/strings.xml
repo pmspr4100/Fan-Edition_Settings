@@ -148,8 +148,10 @@
     <string name="gestures_title">Nav Bar Gesture Customisations</string>
     <string name="gestures_summary">Take Your Pill</string>
 
-    <!-- Lockscreen media artwork -->
-    <string name="lockscreen_media_art_title">Display media cover art</string>
+	<!-- Media art -->
+    <string name="lockscreen_media_category">Lock screen media</string>
+    <string name="media_art_title">Media cover art</string>
+    <string name="media_art_summary">Enable media cover art on the lockscreen</string>
 
     <string name="search">Search</string>
     <string name="search_apps">Search apps</string>
