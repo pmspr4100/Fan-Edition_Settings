@@ -296,6 +296,11 @@
     <string name="monet_engine_chroma_factor_title">Chroma factor</string>
     <string name="monet_engine_linear_lightness_title">Use linear lightness</string>
 
+    <!-- Custom styles -->
+    <string name="styles_category">Styles</string>
+    <string name="theme_customization_font_title">Font style</string>
+    <string name="theme_customization_font_summary">Set system font style</string>
+
     <!-- Lockscreen Clock -->
     <string name="lockscreen_small_clock_title">Small clock</string>
     <string name="lockscreen_small_clock_summary">Force small clock on lockscreen even if notifications are absent</string>
