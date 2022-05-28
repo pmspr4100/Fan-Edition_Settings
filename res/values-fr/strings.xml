@@ -19,7 +19,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     
     <!-- General app strings -->
-    <string name="extensions_title">Paramètres Extended</string>
+    <string name="extensions_title">Extended</string>
     <string name="add">Ajouter</string>
     <string name="advanced">Avancé</string>
     <string name="cancel">Annuler</string>
@@ -121,13 +121,13 @@
 
     <!-- Quick QS pulldown -->
     <string name="status_bar_quick_qs_pulldown">Quick QS pulldown</string>
-    <string name="quick_pulldown_none">Disabled</string>
+    <string name="quick_pulldown_none">Désactivé</string>
     <string name="quick_pulldown_right">Pulldown statusbar from right side</string>
     <string name="quick_pulldown_left">Pulldown statusbar from left side</string>
 
     <!-- Torch Power button gestures -->
     <string name="torch_power_button_gesture_title">Toggle torch when screen off</string>
-    <string name="torch_power_button_gesture_none">Disabled</string>
+    <string name="torch_power_button_gesture_none">Désactivé</string>
     <string name="torch_power_button_gesture_dt">Double press power button (Disables Quickly open camera feature and adds 170ms wakeup delay)</string>
     <string name="torch_power_button_gesture_lp">Long press power button</string>
 
@@ -147,10 +147,10 @@
     <string name="qs_show_auto_brightness_summary">Afficher la bascule pour la luminosité adaptative près du curseur</string>
 
     <!-- Brightness control -->
-    <string name="status_bar_toggle_brightness">Brightness control</string>
-    <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding across the status bar</string>
+    <string name="status_bar_toggle_brightness">Réglage de la luminosité</string>
+    <string name="status_bar_toggle_brightness_summary">Réglez la luminosité en faisant glisser la barre d\'état</string>
 
-    <string name="gestures_title">Nav Bar Gesture Customisations</string>
+    <string name="gestures_title">Personnalisations des gestes de la barre de navigation</string>
     <string name="gestures_summary">Take Your Pill</string>
 
     <!-- Lockscreen media artwork -->
@@ -185,8 +185,8 @@
     <string name="enable_fingerprint_ripple_effect_summary">Show ripple effect on unlock with fingerprint</string>
 
     <!-- Location Privacy Indicator -->
-    <string name="location_privacy_title"> Show Location Privacy Indicator</string>
-    <string name="location_privacy_summary">Enable - Disable location privacy indicator in qs and sb</string>
+    <string name="location_privacy_title"> Afficher l\'indicateur de confidentialité de la localisation</string>
+    <string name="location_privacy_summary">Activer - Désactiver l\'indicateur de confidentialité de la localisation dans QS et SB</string>
 
     <!-- Network Traffic -->
     <string name="traffic_title">Indicateurs de trafic</string>
@@ -206,8 +206,8 @@
     <string name="status_bar_clock_title">Horloge &amp; date</string>
     <string name="status_bar_clock_summary">Personnaliser l\'horloge &amp; date</string>
     <string name="status_bar_clock_seconds_title">Clock seconds</string>
-    <string name="status_bar_clock_seconds_summary">Display seconds next to clock in status bar</string>
-    <string name="status_bar_clock_position_title">Clock style</string>
+    <string name="status_bar_clock_seconds_summary">Afficher les secondes à côté de l\'horloge dans la barre d\'état</string>
+    <string name="status_bar_clock_position_title">Style d\'horloge</string>
     <string name="status_bar_clock_position_right">Droite</string>
     <string name="status_bar_clock_position_left">Gauche</string>
     <string name="status_bar_clock_position_center">Centre</string>
