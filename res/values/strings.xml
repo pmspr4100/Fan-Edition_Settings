@@ -387,4 +387,13 @@
 	<!-- Gaming mode -->
     <string name="gaming_mode_title">Game space</string>
     <string name="gaming_mode_summary">Extra features for immersive gaming experience</string>
+
+  <!-- Qs Column Settings -->
+    <string name="qs_columns_portrait_title">Qs Columns in Portrait</string>
+    <string name="qs_columns_landscape_title">Qs Columns in Landscape</string>
+    <string name="qs_tile_vertical_layout_title">Qs Vertical Layout</string>
+    <string name="qs_tile_vertical_layout_summary">Enable-disable tile vertical layout</string>
+    <string name="qs_tile_title_visibility_title">Hide titles</string>
+    <string name="qs_tile_title_visibility_summary">Enable to hide QS tile titles</string>
+    <string name="qs_columns_category">QS Column Settings</string>
 </resources>
