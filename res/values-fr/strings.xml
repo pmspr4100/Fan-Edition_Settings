@@ -41,7 +41,7 @@
     <string name="system_category">Système</string>
     <string name="lockscreen_category">Écran de verrouillage</string>
     <string name="hardware_category">Matériel</string>
-    <string name="build_tweaks_summary_title">Paramètres additionnels !</string>
+    <string name="build_tweaks_summary_title">Paramètres pixel extented !</string>
     <string name="listview">Affichage Liste</string>
 
     <string name="misc_category">Paramètres divers</string>
@@ -200,7 +200,7 @@
     <!-- Status bar - Clock -->
     <string name="status_bar_clock_title">Horloge &amp; date</string>
     <string name="status_bar_clock_summary">Personnaliser l\'horloge &amp; date</string>
-    <string name="status_bar_clock_seconds_title">Clock seconds</string>
+    <string name="status_bar_clock_seconds_title">Afficher les secondes</string>
     <string name="status_bar_clock_seconds_summary">Afficher les secondes à côté de l\'horloge dans la barre d\'état</string>
     <string name="status_bar_clock_position_title">Style d\'horloge</string>
     <string name="status_bar_clock_position_right">Droite</string>
@@ -223,7 +223,7 @@
     <string name="status_bar_date_none">Masquer</string>
     <string name="status_bar_date_small">Petit</string>
     <string name="status_bar_date_normal">Normal</string>
-    <string name="status_bar_date_format_title">Format de date</string>
+    <string name="status_bar_date_format_title">Format de la date</string>
     <string name="status_bar_date_style">Style de date</string>
     <string name="status_bar_date_style_normal">Normal</string>
     <string name="status_bar_date_style_lowercase">Minuscule</string>
@@ -284,7 +284,7 @@
 
     <!-- UI settings -->
     <string name="monet_title">Paramètres Monet</string>
-    <string name="monet_summary">Personnaliser le moteur de thème Monet</string>
+    <string name="monet_summary">Personnaliser le thème Monet</string>
 
     <!-- Monet Engine -->
     <string name="monet_category">Moteur Monet</string>
@@ -386,4 +386,13 @@
 	<!-- Gaming mode -->
     <string name="gaming_mode_title">Espace de jeu</string>
     <string name="gaming_mode_summary">Fonctionnalités supplémentaires pour une expérience de jeu immersive</string>
+
+  <!-- Qs Column Settings -->
+    <string name="qs_columns_portrait_title">Colonnes QS en portrait</string>
+    <string name="qs_columns_landscape_title">Colonnes QS en paysage</string>
+    <string name="qs_tile_vertical_layout_title">Disposition verticale QS</string>
+    <string name="qs_tile_vertical_layout_summary">Activer-désactiver la disposition verticale des tuiles</string>
+    <string name="qs_tile_title_visibility_title">Masquer les titres</string>
+    <string name="qs_tile_title_visibility_summary">Activer pour masquer les titres des tuiles QS</string>
+    <string name="qs_columns_category">Paramètres de la colonne QS</string>
 </resources>
