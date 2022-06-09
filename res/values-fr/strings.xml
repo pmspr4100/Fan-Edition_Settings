@@ -19,7 +19,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     
     <!-- General app strings -->
-    <string name="extensions_title">Extended</string>
+    <string name="extensions_title">Additionnels</string>
     <string name="add">Ajouter</string>
     <string name="advanced">Avancé</string>
     <string name="cancel">Annuler</string>
@@ -34,13 +34,14 @@
     <string name="icon_title">Icône</string>
     <string name="color_title">Couleur</string>
     <string name="colors_title">Couleurs</string>
+    <string name="misc_title">Divers</string>
 
     <!-- Extensions categories -->
     <string name="status_bar_category">Barre d\'état</string>
     <string name="system_category">Système</string>
     <string name="lockscreen_category">Écran de verrouillage</string>
     <string name="hardware_category">Matériel</string>
-    <string name="build_tweaks_summary_title">Il fait vraiment froid ici !</string>
+    <string name="build_tweaks_summary_title">Paramètres pixel extented !</string>
     <string name="listview">Affichage Liste</string>
 
     <string name="misc_category">Paramètres divers</string>
@@ -103,33 +104,27 @@
 
     <!-- Volume rocker wake -->
     <string name="volume_rocker_wake_title">Volume rocker wake</string>
-    <string name="volume_rocker_wake_summary">Pressing the volume keys will wake your device</string>
+    <string name="volume_rocker_wake_summary">Appuyez sur les touches de volume pour réveiller votre appareil</string>
 
     <!-- Lockscreen battery info indicator  -->
-    <string name="lockscreen_battery_info_title">Lockscreen charging info</string>
-    <string name="lockscreen_battery_info_summary">Show charging current, voltage, wattage and battery temperature on lockscreen while charging</string>
+    <string name="lockscreen_battery_info_title">Informations de chargement sur l\'écran de verrouillage</string>
+    <string name="lockscreen_battery_info_summary">Afficher le courant de charge, la tension, la puissance et la température de la batterie sur l\'écran de verrouillage pendant la charge</string>
 
     <!-- Fingerprint authentication vibration -->
-    <string name="fprint_sucess_vib_title">Fingerprint success vibration</string>
-    <string name="fprint_sucess_vib_summary">Vibrate on successful fingerprint authentication</string>
-    <string name="fprint_error_vib_title">Fingerprint error vibration</string>
-    <string name="fprint_error_vib_summary">Vibrate on failed fingerprint authentication</string>
+    <string name="fprint_sucess_vib_title">Vibration de succès d\'empreintes digitales</string>
+    <string name="fprint_sucess_vib_summary">Vibrer en cas d\'authentification par empreinte digitale réussie</string>
+    <string name="fprint_error_vib_title">Vibration d\'erreur d\'empreinte digitale</string>
+    <string name="fprint_error_vib_summary">Vibrer en cas d\'échec de l\'authentification par empreinte digitale</string>
 
     <!-- Wake on plug -->
-    <string name="wake_when_plugged_or_unplugged_title">Wake on plug</string>
-    <string name="wake_when_plugged_or_unplugged_summary">Turn the screen on when connecting or disconnecting a power source</string>
+    <string name="wake_when_plugged_or_unplugged_title">Réveil sur prise</string>
+    <string name="wake_when_plugged_or_unplugged_summary">Allumer l\'écran lors de la connexion ou de la déconnexion d\'une source d\'alimentation</string>
 
     <!-- Quick QS pulldown -->
-    <string name="status_bar_quick_qs_pulldown">Quick QS pulldown</string>
+    <string name="status_bar_quick_qs_pulldown">Déroulement rapide QS</string>
     <string name="quick_pulldown_none">Désactivé</string>
-    <string name="quick_pulldown_right">Pulldown statusbar from right side</string>
-    <string name="quick_pulldown_left">Pulldown statusbar from left side</string>
-
-    <!-- Torch Power button gestures -->
-    <string name="torch_power_button_gesture_title">Toggle torch when screen off</string>
-    <string name="torch_power_button_gesture_none">Désactivé</string>
-    <string name="torch_power_button_gesture_dt">Double press power button (Disables Quickly open camera feature and adds 170ms wakeup delay)</string>
-    <string name="torch_power_button_gesture_lp">Long press power button</string>
+    <string name="quick_pulldown_right">Barre d\'état déroulante du côté droit</string>
+    <string name="quick_pulldown_left">Barre d\'état déroulante du côté gauche</string>
 
     <!-- Quick Settings brightness slider -->
     <string name="qs_brightness_slider_category">Curseur de luminosité</string>
@@ -151,12 +146,12 @@
     <string name="status_bar_toggle_brightness_summary">Réglez la luminosité en faisant glisser la barre d\'état</string>
 
     <string name="gestures_title">Personnalisations des gestes de la barre de navigation</string>
-    <string name="gestures_summary">Take Your Pill</string>
+    <string name="gestures_summary">Prenez votre temps</string>
 
-    <!-- Lockscreen media artwork -->
-    <string name="lockscreen_media_blur_title">Media art blur level</string>
-    <string name="show_lockscreen_media_art_title">Show media art</string>
-    <string name="lockscreen_media_art_options_title">Lockscreen media art</string>
+	<!-- Media art -->
+    <string name="lockscreen_media_category">Verrouiller l\'écran multimédia</string>
+    <string name="media_art_title">Couverture médiatique</string>
+    <string name="media_art_summary">Activer la couverture multimédia sur l\'écran de verrouillage</string>
 
     <string name="search">Recherche</string>
     <string name="search_apps">Rechercher des applications</string>
@@ -170,7 +165,7 @@
     <string name="power_menu_title_summary">Afficher ou modifier les entrées du menu d\'alimentation</string>
     <string name="powermenu_screenshot">Capture d\'écran</string>
     <string name="powermenu_power">Power</string>
-    <string name="powermenu_advanced">Options de redémarrage avancées</string>
+    <string name="powermenu_advanced">Options de redémarrage</string>
     <string name="powermenu_restart">Redémarrer</string>
     <string name="powermenu_airplane">Avion</string>
     <string name="powermenu_settings">Paramètres</string>
@@ -181,8 +176,8 @@
     <string name="powermenu_emergency">Urgence</string>
 
     <!-- Fingerprint Ripple Effect -->
-    <string name="enable_fingerprint_ripple_effect_title">Ripple effect</string>
-    <string name="enable_fingerprint_ripple_effect_summary">Show ripple effect on unlock with fingerprint</string>
+    <string name="enable_fingerprint_ripple_effect_title">Effet d\'entraînement</string>
+    <string name="enable_fingerprint_ripple_effect_summary">Afficher l\'effet d\'entraînement lors du déverrouillage avec l\'empreinte digitale</string>
 
     <!-- Location Privacy Indicator -->
     <string name="location_privacy_title"> Afficher l\'indicateur de confidentialité de la localisation</string>
@@ -205,7 +200,7 @@
     <!-- Status bar - Clock -->
     <string name="status_bar_clock_title">Horloge &amp; date</string>
     <string name="status_bar_clock_summary">Personnaliser l\'horloge &amp; date</string>
-    <string name="status_bar_clock_seconds_title">Clock seconds</string>
+    <string name="status_bar_clock_seconds_title">Afficher les secondes</string>
     <string name="status_bar_clock_seconds_summary">Afficher les secondes à côté de l\'horloge dans la barre d\'état</string>
     <string name="status_bar_clock_position_title">Style d\'horloge</string>
     <string name="status_bar_clock_position_right">Droite</string>
@@ -228,7 +223,7 @@
     <string name="status_bar_date_none">Masquer</string>
     <string name="status_bar_date_small">Petit</string>
     <string name="status_bar_date_normal">Normal</string>
-    <string name="status_bar_date_format_title">Format de date</string>
+    <string name="status_bar_date_format_title">Format de la date</string>
     <string name="status_bar_date_style">Style de date</string>
     <string name="status_bar_date_style_normal">Normal</string>
     <string name="status_bar_date_style_lowercase">Minuscule</string>
@@ -264,22 +259,140 @@
 
     <!-- Udfps animations -->
     <string name="udfps_category">Udfps</string>
-    <string name="udfps_recog_animation">Udfps animation</string>
-    <string name="udfps_recog_animation_summary">Shows an animation while reading your finger</string>
-    <string name="udfps_recog_animation_effect_title">Udfps animation effect</string>
-    <string name="udfps_recog_animation_effect_summary">Choose animation effect</string>
+    <string name="udfps_recog_animation">Animation Udfps</string>
+    <string name="udfps_recog_animation_summary">Affiche une animation lors de la lecture de votre doigt</string>
+    <string name="udfps_recog_animation_effect_title">Effet d\'animation Udfps</string>
+    <string name="udfps_recog_animation_effect_summary">Choisissez l\'effet d\'animation</string>
 
     <!-- Udfps icon picker -->
-    <string name="udfps_icon_picker_title">Udfps icon picker</string>
-    <string name="udfps_icon_picker_summary">Choose your favorite fingerprint icon</string>
+    <string name="udfps_icon_picker_title">Sélecteur d\'icônes Udfps</string>
+    <string name="udfps_icon_picker_summary">Choisissez votre icône d\'empreinte digitale préférée</string>
 
     <!-- Udfps Custom Options -->
-    <string name="udfps_settings_title">Udfps Options</string>
-    <string name="udfps_settings_summary">Configure Your Udfps</string>
+    <string name="udfps_settings_title">Options Udfps</string>
+    <string name="udfps_settings_summary">Configurez votre Udfps</string>
 
     <!-- Custom FOD Icon -->
-    <string name="custom_fp_icon_title">Custom UDFPS Icon</string>
-    <string name="custom_fp_icon_summary">Enable custom UDFPS Icon from files</string>
-    <string name="custom_fp_select_title">Select Custom UDFPS Icon</string>
-    <string name="custom_fp_select_summary">Select custom image from your saved files or gallery</string>
+    <string name="custom_fp_icon_title">Icône UDFPS personnalisée</string>
+    <string name="custom_fp_icon_summary">Activer l\'icône UDFPS personnalisée à partir des fichiers</string>
+    <string name="custom_fp_select_title">Sélectionnez l\'icône UDFPS personnalisée</string>
+    <string name="custom_fp_select_summary">Sélectionnez une image personnalisée à partir de vos fichiers enregistrés ou de votre galerie</string>
+
+    <!-- Screen off FOD -->
+    <string name="screen_off_fod_title">Screen off FOD</string>
+    <string name="screen_off_fod_summary">Keep FOD enabled when the screen is off</string>
+
+    <!-- UI settings -->
+    <string name="monet_title">Paramètres Monet</string>
+    <string name="monet_summary">Personnaliser le thème Monet</string>
+
+    <!-- Monet Engine -->
+    <string name="monet_category">Moteur Monet</string>
+    <string name="monet_engine_custom_color_title">Utiliser une couleur personnalisée</string>
+    <string name="monet_engine_custom_color_summary">Utiliser une couleur personnalisée pour le moteur monet au lieu des couleurs de fond d\'écran</string>
+    <string name="monet_engine_color_override_title">Couleur personnalisée</string>
+    <string name="monet_engine_white_luminance_user_title">Luminosité blanche</string>
+    <string name="monet_engine_accurate_shades_title">Utilisez des nuances précises</string>
+    <string name="monet_engine_chroma_factor_title">Facteur de chrominance</string>
+    <string name="monet_engine_linear_lightness_title">Utiliser la légèreté linéaire</string>
+
+    <!-- Custom styles -->
+    <string name="styles_category">Styles</string>
+    <string name="theme_customization_font_title">Font style</string>
+    <string name="theme_customization_font_summary">Définir le style de police du système</string>
+
+    <!-- Lockscreen Clock -->
+    <string name="lockscreen_small_clock_title">Petite horloge</string>
+    <string name="lockscreen_small_clock_summary">Forcer la petite horloge sur l\'écran de verrouillage même si les notifications sont absentes</string>
+
+    <!-- Power menu on secure lockscreen -->
+    <string name="lockscreen_enable_power_menu_title">Menu d\'alimentation</string>
+    <string name="lockscreen_enable_power_menu_summary">Autoriser l\'accès au menu d\'alimentation sur l\'écran de verrouillage sécurisé</string>
+
+    <!-- Black theme -->
+    <string name="system_black_theme_title">Utiliser le thème noir</string>
+    <string name="system_black_theme_summary">Forcer les couleurs de fond noir</string>
+
+    <!-- Home key customization -->
+    <string name="home_answer_call_title">Répondre à un appel</string>
+    <string name="home_answer_call_summary">Répondez aux appels entrants en appuyant sur le bouton d\'accueil</string>
+
+    <!-- Power menu key customization -->
+    <string name="power_end_call_title">Fin d\'appel</string>
+    <string name="power_end_call_summary">Terminez l\'appel en cours en appuyant sur le bouton d\'alimentation</string>
+    <string name="torch_long_press_power_gesture_title">Appuyez longuement sur la torche</string>
+    <string name="torch_long_press_power_gesture_desc">Activez la torche en appuyant longuement sur le bouton d\'alimentation lorsque l\'écran est éteint</string>
+    <string name="torch_long_press_power_timeout_title">Éteignez automatiquement la torche</string>
+    <string name="torch_long_press_power_timeout_never">Jamais</string>
+    <string name="torch_long_press_power_timeout_1min">1 minute</string>
+    <string name="torch_long_press_power_timeout_2min">2 minutes</string>
+    <string name="torch_long_press_power_timeout_5min">5 minutes</string>
+    <string name="torch_long_press_power_timeout_10min">10 minutes</string>
+
+    <!-- Buttons -->
+    <string name="button_pref_title">Boutons</string>
+    <string name="hardware_keys_home_key_title">Bouton d\'accueil</string>
+
+    <!-- Volume keys customization -->
+    <string name="volume_answer_call_title">Répondre à un appel</string>
+    <string name="volume_answer_call_summary">Répondez aux appels entrants en appuyant sur les boutons de volume</string>
+
+    <!-- Pocket judge -->
+    <string name="pocket_judge_title">Détection de poche</string>
+    <string name="pocket_judge_summary">Bloquer les entrées de l\'écran et des boutons lorsque l\'appareil est dans la poche</string>
+
+    <!-- Lockscreen album art filter -->
+    <string name="lockscreen_albumart_filter_title">Filtre de couverture médiatique</string>
+    <string name="lockscreen_albumart_filter_none">Aucun</string>
+    <string name="lockscreen_albumart_filter_grayscale">Niveaux de gris</string>
+    <string name="lockscreen_albumart_filter_tint">Accent teinté</string>
+    <string name="lockscreen_albumart_filter_blur">Estomper</string>
+    <string name="lockscreen_albumart_filter_grayblur">Niveaux de gris et flou</string>
+
+	<!-- Pulse music visualizer -->
+    <string name="pulse_help_policy_notice_title">About Pulse</string>
+    <string name="pulse_help_policy_notice_summary">Pulse is a brilliant audio graphic equalizer when music plays on the device</string>
+    <string name="pulse_settings">Pulse</string>
+    <string name="pulse_settings_summary">Audio graphic equalizer for navigation bar and lockscreen</string>
+    <string name="show_navbar_pulse_title">Navbar Pulse</string>
+    <string name="show_navbar_pulse_summary">Audio graphic equalizer on the navigation bar</string>
+    <string name="show_lockscreen_pulse_title">Lockscreen Pulse</string>
+    <string name="show_lockscreen_pulse_summary">Audio graphic equalizer on the lockscreen</string>
+    <string name="show_ambient_pulse_title">Ambient Pulse</string>
+    <string name="show_ambient_pulse_summary">Audio graphic equalizer on the ambient screen</string>
+    <string name="pulse_render_mode_title">Render mode</string>
+    <string name="pulse_render_mode_fading_bars">Fading blocks</string>
+    <string name="pulse_render_mode_solid_lines">Solid lines</string>
+    <string name="pulse_legacy_mode_advanced_category">Fading blocks mode settings</string>
+    <string name="pulse_custom_fudge_factor">Sanity level</string>
+    <string name="pulse_lavalamp_speed_title">Lava lamp speed</string>
+    <string name="pulse_solid_units_count">Solid lines count</string>
+    <string name="pulse_solid_units_opacity">Solid lines opacity</string>
+    <string name="pulse_solid_units_rounded_title">Rounded corners</string>
+    <string name="pulse_solid_units_rounded_summary">Solid lines with rounded tip</string>
+    <string name="pulse_solid_dimen_category">Solid lines mode settings</string>
+    <string name="pulse_color_mode_title">Color</string>
+    <string name="pulse_color_accent">Accent</string>
+    <string name="pulse_color_custom">Custom</string>
+    <string name="pulse_color_lava_lamp">Lava lamp</string>
+    <string name="pulse_color_user_title">Choose color</string>
+    <string name="pulse_smoothing_enabled_title">Turn on smoothing</string>
+    <string name="pulse_smoothing_enabled_summary">Each bar is animated more smoothly</string>
+    <string name="pulse_custom_dimen">Bar width</string>
+    <string name="pulse_custom_div">Bar spacing</string>
+    <string name="pulse_filled_block_size">Block size</string>
+    <string name="pulse_empty_block_size">Block spacing</string>
+
+	<!-- Gaming mode -->
+    <string name="gaming_mode_title">Espace de jeu</string>
+    <string name="gaming_mode_summary">Fonctionnalités supplémentaires pour une expérience de jeu immersive</string>
+
+  <!-- Qs Column Settings -->
+    <string name="qs_columns_portrait_title">Colonnes QS en portrait</string>
+    <string name="qs_columns_landscape_title">Colonnes QS en paysage</string>
+    <string name="qs_tile_vertical_layout_title">Disposition verticale QS</string>
+    <string name="qs_tile_vertical_layout_summary">Activer-désactiver la disposition verticale des tuiles</string>
+    <string name="qs_tile_title_visibility_title">Masquer les titres</string>
+    <string name="qs_tile_title_visibility_summary">Activer pour masquer les titres des tuiles QS</string>
+    <string name="qs_columns_category">Paramètres de la colonne QS</string>
 </resources>
